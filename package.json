@@ -1,0 +1,56 @@
+{
+  "name": "my_env",
+  "version": "1.0.0",
+  "description": "フロントエンド制作・開発用パッケージ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "gulp": "gulp",
+    "jsmin": "gulp jsmin",
+    "sprite": "gulp sprite",
+    "spriter": "gulp spriter",
+    "font": "gulp font"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuking11/my_env.git"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "author": "@Yuking11",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.23.5",
+    "css-mqpacker": "^6.0.1",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-iconfont": "^9.0.2",
+    "gulp-imageoptim": "^1.0.9",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "^3.0.0",
+    "gulp.spritesmith": "^6.9.0",
+    "lodash": "^4.17.4",
+    "postcss-assets": "^5.0.0",
+    "source-map-loader": "^0.2.3",
+    "webpack": "^4.1.1",
+    "webpack-stream": "^4.0.2"
+  }
+}
