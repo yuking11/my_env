@@ -1902,8 +1902,7 @@ set Print
 ===================================================== */
 @media print {
   section {
-    display: block;
-    page-break-before: auto; }
+    display: block; }
   pre code {
     page-break-after: auto; }
   @page {

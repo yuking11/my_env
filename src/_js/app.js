@@ -1,7 +1,9 @@
 "use strict";
 import { Utils } from "./utils";
+import { Uac } from "./uac";
 
-let utils = new Utils();
+const utils = new Utils();
+const uac = new Uac();
 
 /**
  * sample
@@ -10,6 +12,19 @@ console.log('utils.getWindowWidth: ' + utils.getWindowWidth());
 console.log('utils.mq("1279", "max"): ' + utils.mq('1279', 'max'));
 console.log('utils.mq("1280"): ' + utils.mq('1280'));
 
+console.log('browser name: ' + uac.browser());
+console.log('device name: ' + uac.device());
+console.log('if it\'s IE: ' + uac.isIE());
+console.log('if it\'s ios: ' + uac.isiOS());
+console.log('if it\'s a mobile device: ' + uac.isMobile());
+console.log('if it\'s a tablet device: ' + uac.isTablet());
+console.log('if it\'s a touch device: ' + uac.isTouch());
+console.log('if it\'s a modern browser: ' + uac.isModern());
+
+/**
+ * add classes <html>
+ */
+// uac.homeClass();
 
 /**
  * 画像ロールオーバー vanilla JS
