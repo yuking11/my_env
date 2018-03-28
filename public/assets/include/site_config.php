@@ -7,7 +7,7 @@
   /*
    * URL設定
    */
-  define('LOCAL_URI', 'gh_my_env.local.dev');
+  define('LOCAL_URI', 'gh_my_env.local.test');
 
   $base_url = isset($_SERVER['HTTPS']) &&
               strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
@@ -23,7 +23,7 @@
   } else if($host === $host_develop){
     //define("HTTP", 'http://dev.example.com');
   } else if($host === $host_local){
-    //define("HTTP", 'http://example.local.dev');
+    //define("HTTP", 'http://example.local.test');
   }
   define("HTTP", htmlspecialchars($base_url, ENT_QUOTES));
 

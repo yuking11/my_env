@@ -29,7 +29,7 @@ import webpackConfig from './webpack.config.js';
 /*
  * site-config
  */
-const siteUrl = 'http://gh_my_env.local.dev/';// 環境にあわせて変更
+const siteUrl = 'http://gh_my_env.local.test/';// 環境にあわせて変更
 const paths   = {
   dest       : './public_html',
   srcImages  : './src/_img',

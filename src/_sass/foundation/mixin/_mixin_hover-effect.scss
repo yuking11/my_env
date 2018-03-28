@@ -54,3 +54,39 @@
     }// &::after
   }// &:hover, .is-hover
 }
+
+
+// underline
+@mixin hover_underline(
+    $color: $font_color,
+    $time: .25s,
+    $height: 2px,
+    $prop: transform,
+    $easing: ease-out,
+    $direction: right
+  ) {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: $color;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $color;
+    width: 100%;
+    height: $height;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: $prop $time $easing;
+  }// &::after
+  &:hover,
+  .is-hover {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }// &::after
+  }// &:hover, .is-hover
+}
+
