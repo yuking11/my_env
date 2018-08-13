@@ -25,21 +25,22 @@ import mqpacker     from 'css-mqpacker';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
+import webpackConfigProd from './webpack.config.prod.js';
 
 /*
  * site-config
  */
 const siteUrl = 'http://gh_my_env.local.test/';// 環境にあわせて変更
 const paths   = {
-  dest       : './public_html',
+  dest       : './public',
   srcImages  : './src/_img',
   srcFonts   : './src/_icons',
   srcScripts : './src/_js',
   sass       : './src/_sass',
-  images     : './public_html/assets/img',
-  fonts      : './public_html/assets/fonts',
-  scripts    : './public_html/assets/js',
-  styles     : './public_html/assets/css'
+  images     : './public/assets/img',
+  fonts      : './public/assets/fonts',
+  scripts    : './public/assets/js',
+  styles     : './public/assets/css'
 }
 
 /*
@@ -58,6 +59,13 @@ export const watch = () => {
 // js ES2015 WebPack
 export const scripts = () => {
   return webpackStream(webpackConfig, webpack)
+    .pipe($.plumber())
+    .pipe(gulp.dest( paths.scripts ))
+    .pipe(browserSync.reload({ stream: true }));
+}
+// Production
+export const scriptsProd = () => {
+  return webpackStream(webpackConfigProd, webpack)
     .pipe($.plumber())
     .pipe(gulp.dest( paths.scripts ))
     .pipe(browserSync.reload({ stream: true }));
@@ -108,7 +116,7 @@ export const sass = () => {
 // css-min
 export const cssmin = () => {
   gulp.src( paths.styles + '/app.css' )
-    .pipe($.postcss([mqpacker()]))
+    // .pipe($.postcss([mqpacker()]))
     .pipe($.cssmin())
     .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest( paths.styles ))
