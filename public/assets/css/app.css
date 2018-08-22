@@ -366,7 +366,7 @@ a {
 
 a, button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
@@ -505,8 +505,8 @@ code {
 =========================================== */
 @font-face {
   font-family: "icon";
-  src: url("../fonts/icon.eot?c=1520580882956");
-  src: url("../fonts/icon.eot?#iefix?c=1520580882956") format("eot"), url("../fonts/icon.woff?c=1520580882956") format("woff"), url("../fonts/icon.ttf?c=1520580882956") format("truetype"), url("../fonts/icon.svg#icon?c=1520580882956") format("svg");
+  src: url("../fonts/icon.eot?c=1521020376734");
+  src: url("../fonts/icon.eot?#iefix?c=1521020376734") format("eot"), url("../fonts/icon.woff?c=1521020376734") format("woff"), url("../fonts/icon.ttf?c=1521020376734") format("truetype"), url("../fonts/icon.svg#icon?c=1521020376734") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -523,9 +523,6 @@ code {
 
 .icon-check:before {
   content: "\F001"; }
-
-.icon-check_2:before {
-  content: "\F002"; }
 
 .row {
   width: calc(100% + 1rem);

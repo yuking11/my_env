@@ -20,7 +20,6 @@ const browserSync = bs.create();
 // Post CSS
 import autoprefixer from 'autoprefixer';
 import assets       from 'postcss-assets';
-import mqpacker     from 'css-mqpacker';
 // webpack
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
@@ -105,7 +104,8 @@ export const sass = () => {
     })]))
     .pipe($.postcss([
       require('autoprefixer')({
-        browsers: ['last 2 versions']
+        // browsers: ['last 2 versions']
+        browsers: ['last 2 versions', 'Android >= 5.0']
       })
     ]))
     .pipe($.sourcemaps.write( './' ))
