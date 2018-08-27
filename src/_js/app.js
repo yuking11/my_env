@@ -68,3 +68,25 @@ window.addEventListener('load', smartRollover, false);
 document.addEventListener('DOMContentLoaded', () => {
   const sweetScroll = new SweetScroll();
 }, false);
+
+
+/**
+ * page top btn
+ *
+ * @param none
+ *
+ */
+if ( document.querySelectorAll('[data-pagetop]') ) {
+  let btnPageTop = document.querySelectorAll('[data-pagetop]');
+  for (let i = 0; i < btnPageTop.length; i++) {
+    window.onscroll = () => {
+      const offset = window.pageYOffset,
+            value  = btnPageTop[i].getAttribute('data-pagetop');
+      if ( offset > value ) {
+        btnPageTop[i].classList.add('is-active');
+      } else {
+        btnPageTop[i].classList.remove('is-active');
+      }
+    };
+  }// for
+}// if

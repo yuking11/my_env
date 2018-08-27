@@ -700,11 +700,12 @@ $tab_length: 5;
 <div class="l-content-wide u-mt40 u-mb40">
   <div class="l-inner">
     <p style="margin-top: 750px;"><a href="#" data-scroll>Page Top</a></p>
-    <div id="btn-pagetop">btn</div>
   </div>
   <!-- /.l-inner -->
 </div>
 <!-- /.l-content-wide u-mt40 -->
+
+<a href="#" class="p-pagetop" data-scroll data-pagetop="500">Page<br>Top</a>
 
 <?php
 	include_once(__DIR__ . "/assets/include/_end_of_body.php");

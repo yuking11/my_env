@@ -82,29 +82,22 @@ $( () => {
  * @param none
  *
  */
-if ( $('#btn-pagetop')[0] ){
+if ( $('[data-pagetop]')[0] ){
   $(() => {
-  // $(function() {
-    let $btn = $('#btn-pagetop'),
-        ww   = utils.getWindowWidth(),
-        pos  = 0,
+    let $btn = $('[data-pagetop]'),
         showFlag = false;
+    const value = $btn.data('pagetop');
     $(window).scroll( (e) => {
       e.preventDefault;
-      if( $(e.currentTarget).scrollTop() > 300 ){
+      if( $(e.currentTarget).scrollTop() > value ){
         if(showFlag === false){
           showFlag = true;
-          if (ww >= 960) {
-            pos = 40;
-          } else {
-            pos = 15;
-          }
-          $btn.stop().css({'bottom': pos + 'px'});
+          $btn.addClass('is-active');
         }
       } else {
         if(showFlag){
           showFlag = false;
-          $btn.stop().css({'bottom': '-76px'});
+          $btn.removeClass('is-active');
         }
       }
     });
