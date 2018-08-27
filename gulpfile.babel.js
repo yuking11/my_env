@@ -105,7 +105,8 @@ export const sass = () => {
     .pipe($.postcss([
       require('autoprefixer')({
         // browsers: ['last 2 versions']
-        browsers: ['last 2 versions', 'Android >= 5.0']
+        browsers: ['last 2 versions', 'Android >= 5.0'],
+        grid: true
       })
     ]))
     .pipe($.sourcemaps.write( './' ))
