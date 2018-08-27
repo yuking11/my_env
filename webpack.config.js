@@ -1,3 +1,5 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
@@ -14,12 +16,20 @@ module.exports = {
     filename: 'app.js'
   },
   // jQueryCDN用設定
-  externals: {
-    jquery: 'jQuery',
-    jquery: '$'
-  },
+  // externals: {
+  //   jquery: 'jQuery',
+  //   jquery: '$'
+  // },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: "vue-loader"
+          }
+        ]
+      },
       {
         // 拡張子 .js の場合
         test: /\.js$/,
@@ -42,5 +52,17 @@ module.exports = {
         exclude: /node_modules/,
       }
     ]
-  }
+  },
+  resolve: {
+    // importするときに省略できる拡張子の設定
+    extensions: ['.js', '.vue'],
+    // aliasを追加
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
+  plugins: [
+    // Vueを読み込めるようにするため
+    new VueLoaderPlugin()
+  ]
 };

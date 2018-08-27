@@ -1479,6 +1479,57 @@ code {
         top: 50%;
         bottom: 0; } }
 
+.vue-carousel {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 300px; }
+  .vue-carousel_body {
+    color: #fff;
+    height: 150px;
+    left: 0;
+    line-height: 150px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%; }
+  .vue-carousel_footer {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: absolute;
+    top: 150px;
+    width: 100%; }
+    .vue-carousel_footer_dot {
+      background-color: #abc2ce;
+      border-radius: 50%;
+      height: 26px;
+      width: 26px;
+      cursor: pointer; }
+      .vue-carousel_footer_dot.is-visible {
+        background-color: #7b94f9;
+        cursor: default; }
+
+.show-next-enter-active, .show-next-leave-active,
+.show-prev-enter-active, .show-prev-leave-active {
+  -webkit-transition: all .4s;
+  transition: all .4s; }
+
+.show-next-enter, .show-prev-leave-to {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%); }
+
+.show-next-leave-to, .show-prev-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); }
+
 @media print, screen and (max-width: 699px) {
   #top_page {
     margin: 10px; } }

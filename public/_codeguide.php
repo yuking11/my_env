@@ -26,6 +26,7 @@
     <h2 class="mb10">スムーズスクロールテスト</h2>
     <p>
       <a href="#grid_layout" data-scroll>"Grid Layout"へ</a>&nbsp;&nbsp;
+      <a href="#vue-test" data-scroll>"Vue.js テスト"へ</a>&nbsp;&nbsp;
       <a href="#image_effetcs" data-scroll>"Image Effects"へ</a>&nbsp;&nbsp;
       <a href="#tab_css" data-scroll>"タブ切り替え（css only）"へ</a>&nbsp;&nbsp;
       <a href="#acc_css" data-scroll>"アコーディオン（css only）"へ</a>&nbsp;&nbsp;
@@ -34,6 +35,39 @@
       <a href="#movie" data-scroll>"埋め込みiframeレスポンシブ"へ</a>&nbsp;&nbsp;
       <a href="#buttons" data-scroll>"ボタンレイアウト"へ</a>&nbsp;&nbsp;
     </p>
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
+
+<section id="vue-test" class="l-content-wide u-mt40">
+  <div class="l-inner">
+    <h2 class="mb10">Vue.js テスト</h2>
+    <div id="app">
+      Count<br> {{ count }} <br>
+      <button @click="countUp">add</button>
+    </div>
+
+    <div id="vue-carousel" class="vue-carousel">
+      <!-- スライドする部分。keyを持たせることで、それぞれが個別の要素であることを示す。 -->
+      <transition :name="transition_name">
+        <div class="vue-carousel_body"
+          :key="index"
+          v-for="(content, index) in contents"
+          v-if="visible_content == index"
+          :style="{backgroundColor: content.bg_color}">
+          {{ content.title }}
+        </div>
+      </transition>
+      <!-- 「PREV」「NEXT」と現在地のドット -->
+      <div class="vue-carousel_footer">
+        <button @click="back()" <?php // :disabled="visible_content == 0"  ?>>PREV</button>
+        <div class="vue-carousel_footer_dot"
+          v-for="(contents, index) in contents"
+          @click="move(index)"
+          :class="{'is-visible' : visible_content == index}"></div>
+        <button @click="next()" <?php // :disabled="visible_content == contents.length - 1"  ?>>NEXT</button>
+      </div>
+    </div>
+
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 

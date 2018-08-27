@@ -1,6 +1,7 @@
 "use strict";
 import { Utils } from "./utils";
 import { Uac } from "./uac";
+import Vue from 'vue';
 import SweetScroll from "sweet-scroll";
 
 const utils = new Utils();
@@ -22,10 +23,79 @@ console.log('if it\'s a tablet device: ' + uac.isTablet());
 console.log('if it\'s a touch device: ' + uac.isTouch());
 console.log('if it\'s a modern browser: ' + uac.isModern());
 
+
 /**
  * add classes <html>
  */
 // uac.homeClass();
+
+
+/**
+ * Vue Test
+ */
+const vc = new Vue({
+  el: '#app',
+  data: {
+    count: 0
+  },
+  methods: {
+    countUp: function(){
+      this.count++;
+    }
+  }
+});
+
+const vs = new Vue({
+  el: '#vue-carousel',
+  data: {
+    contents: [
+      {
+        // 青の中身
+        title: 'Content 1',
+        bg_color: '#7bbff9',
+      },
+      {
+        // 赤の中身
+        title: 'Content 2',
+        bg_color: '#f16972',
+      },
+      {
+        // 緑の中身
+        title: 'Content 3',
+        bg_color: '#20d2a3',
+      }
+    ],
+    transition_name: 'show-next',
+    visible_content: 0,
+  },
+  methods: {
+    back(){
+      this.transition_name = 'show-prev';
+      if ( this.visible_content <= 0  ) {
+        this.visible_content = this.contents.length - 1;
+        return false;
+      }
+      this.visible_content--;
+    },
+    next(){
+      this.transition_name = 'show-next';
+      if ( this.visible_content >= this.contents.length - 1 ) {
+        this.visible_content = 0;
+        return false;
+      }
+      this.visible_content++;
+    },
+    move(index){
+      if ( this.visible_content > index ) {
+        this.transition_name = 'show-prev';
+      } else {
+        this.transition_name = 'show-next';
+      }
+      this.visible_content = index;
+    }
+  },
+})
+
 
 /**
  * 画像ロールオーバー vanilla JS

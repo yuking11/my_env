@@ -102,3 +102,52 @@
 .mirror-y-effect {
   @include mirror-y-effect('../img/sample.jpg');
 }// .mirror-y-effect
+
+.vue-carousel{
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  &_body{
+    color: #fff;
+    height: 150px;
+    left: 0;
+    line-height: 150px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+  &_footer{
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    &_dot{
+      background-color: #abc2ce;
+      border-radius: 50%;
+      height: 26px;
+      width: 26px;
+      cursor: pointer;
+      &.is-visible{
+        background-color: #7b94f9;
+        cursor: default;
+      }
+    }
+  }
+}
+
+// 進むトランジションと戻るトランジションをそれぞれ用意
+.show-next-enter-active, .show-next-leave-active,
+.show-prev-enter-active, .show-prev-leave-active  {
+  transition: all .4s;
+}
+.show-next-enter, .show-prev-leave-to {
+  transform: translateX(100%);
+}
+.show-next-leave-to, .show-prev-enter {
+  transform: translateX(-100%);
+}
