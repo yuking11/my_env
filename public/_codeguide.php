@@ -15,20 +15,20 @@
 	include_once(__DIR__ . "/assets/include/_start_of_body.php");
 ?>
 
-<header id="l-header" class="l-header u-pd20 u-mb40">
+<header id="l-header" class="l-header l-header-fixed" data-scroll-header>
 
   <h1>Code Guide</h1>
 
 </header>
 
-<section class="l-content-wide">
+<section class="l-content-wide" style="margin-top: 100px;">
   <div class="l-inner">
     <h2 class="mb10">スムーズスクロールテスト</h2>
     <p>
-      <a href="#grid_layout" data-scroll data-scroll-fixed="#l-header">"Grid Layout"へ</a>&nbsp;&nbsp;
-      <a href="#image_effetcs" data-scroll="hoge">"Image Effects"へ</a>&nbsp;&nbsp;
-      <a href="#tab_css" data-scroll="15">"タブ切り替え（css only）"へ</a>&nbsp;&nbsp;
-      <a href="#acc_css" data-scroll="-15">"アコーディオン（css only）"へ</a>&nbsp;&nbsp;
+      <a href="#grid_layout" data-scroll>"Grid Layout"へ</a>&nbsp;&nbsp;
+      <a href="#image_effetcs" data-scroll>"Image Effects"へ</a>&nbsp;&nbsp;
+      <a href="#tab_css" data-scroll>"タブ切り替え（css only）"へ</a>&nbsp;&nbsp;
+      <a href="#acc_css" data-scroll>"アコーディオン（css only）"へ</a>&nbsp;&nbsp;
       <a href="#movie" data-scroll>"埋め込み動画レスポンシブ"へ</a>&nbsp;&nbsp;
       <a href="#table" data-scroll>"テーブルレイアウト"へ</a>&nbsp;&nbsp;
       <a href="#movie" data-scroll>"埋め込みiframeレスポンシブ"へ</a>&nbsp;&nbsp;
@@ -206,7 +206,7 @@
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="image_effetcs" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -321,7 +321,7 @@
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="tab_css" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -448,7 +448,7 @@ $tab_length: 5;
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="acc_css" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -571,7 +571,7 @@ $tab_length: 5;
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="table" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -642,7 +642,7 @@ $tab_length: 5;
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="movie" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -654,7 +654,7 @@ $tab_length: 5;
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="buttons" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -694,12 +694,12 @@ $tab_length: 5;
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#page_top" data-scroll>Page Top</a></p>
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 
 <div class="l-content-wide u-mt40 u-mb40">
   <div class="l-inner">
-    <p style="margin-top: 750px;"><a href="#page_top" data-scroll>Page Top</a></p>
+    <p style="margin-top: 750px;"><a href="#" data-scroll>Page Top</a></p>
     <div id="btn-pagetop">btn</div>
   </div>
   <!-- /.l-inner -->

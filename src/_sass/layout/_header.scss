@@ -12,6 +12,15 @@
   padding-right: $ct_gutter * 2;
   padding-left: $ct_gutter * 2;
 
+  &-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    width: 100%;
+    padding: 20px;
+  }// &-fixed
+
   @include mq(sp, max, true) {
 
     padding-right: $ct_gutter;

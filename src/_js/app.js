@@ -1,6 +1,7 @@
 "use strict";
 import { Utils } from "./utils";
 import { Uac } from "./uac";
+import SweetScroll from "sweet-scroll";
 
 const utils = new Utils();
 const uac = new Uac();
@@ -59,34 +60,11 @@ window.addEventListener('load', smartRollover, false);
 
 
 /**
- * スムーズスクロール vanilla JS
- *
- * @param none
- *
+ * sweet scroll ES6
+ * @author http://webdesign-dackel.com/2015/12/17/sweet-scroll/
+ * @param option
+ * @param HTMLElement
  */
-let btnScroll = document.querySelectorAll('[data-scroll]');
-for (let i = 0; i < btnScroll.length; i++) {
-  btnScroll[i].addEventListener('click', (e) => {
-    const speed  = 1000,
-          btn    = e.currentTarget,
-          href   = btn.getAttribute('href'),
-          diff   = ( btn.dataset.scroll && parseInt(btn.dataset.scroll) ) ? parseInt(btn.dataset.scroll, 10) : 0,
-          targetElm = document.querySelector(href);
-    // 移動差分取得
-    let offset = diff;
-    // fix要素あれば
-    const fixed = btn.getAttribute('data-scroll-fixed');
-    if ( fixed ) {
-      const fixedHeight = document.querySelector(fixed).offsetHeight;
-      offset += fixedHeight;
-    }// if
-    utils.smoothScroll(
-      href,
-      targetElm,
-      speed,
-      offset,
-      'easeOutQuint'
-    );
-    return false;
-  });// addEventListener
-}// for
+document.addEventListener('DOMContentLoaded', () => {
+  const sweetScroll = new SweetScroll();
+}, false);
