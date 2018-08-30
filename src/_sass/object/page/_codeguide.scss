@@ -151,3 +151,9 @@
 .show-next-leave-to, .show-prev-enter {
   transform: translateX(-100%);
 }
+
+.test_hogege {
+  display: grid;
+  width: width('img/sample.jpg');
+  height: height('img/sample.jpg');
+}

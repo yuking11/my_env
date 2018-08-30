@@ -5,9 +5,9 @@ require('babel-register');
 import gulp from 'gulp';
 /*
  * gulp-load-plugins
- *   concat / consolidate / cssmin / iconfont / imageoptim
- *   load-plugins / notify / plumber / postcss / rename
- *   sass / sourcemaps / spritesmith / uglify
+ *   gulp-consolidate / gulp-iconfont / gulp-imageoptim
+ *   gulp-notify / gulp-plumber / gulp-postcss
+ *   gulp-rename / gulp-sass / gulp-sourcemaps
  */
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
@@ -15,16 +15,16 @@ const $ = gulpLoadPlugins();
  * Other Plugins
  */
 // Browser Sync
-import bs from 'browser-sync';
-const browserSync = bs.create();
+import browserSync from 'browser-sync';
+const bs = browserSync.create();
 // Post CSS
 import autoprefixer from 'autoprefixer';
 import assets       from 'postcss-assets';
 // webpack
-import webpack from 'webpack';
-import webpackStream from 'webpack-stream';
-import webpackConfig from './webpack.config.js';
-import webpackConfigProd from './webpack.config.prod.js';
+import wp from 'webpack';
+import wpStream from 'webpack-stream';
+import wpConfig from './webpack.config.js';
+import wpConfigProd from './webpack.config.prod.js';
 
 /*
  * site-config
@@ -36,6 +36,7 @@ const paths   = {
   srcFonts   : './src/_icons',
   srcScripts : './src/_js',
   sass       : './src/_sass',
+  assets     : './public/assets',
   images     : './public/assets/img',
   fonts      : './public/assets/fonts',
   scripts    : './public/assets/js',
@@ -48,38 +49,30 @@ const paths   = {
 
 // Watch
 export const watch = () => {
-  gulp.watch( paths.sass + '/**/*.scss', sass );
-  gulp.watch( paths.styles + '/*.css', cssmin );
-  gulp.watch( paths.srcScripts + '/**/*.js', scripts );
-  // gulp.watch( paths.scripts + '/*.js', jsmin );
+  // gulp.watch( paths.sass + '/**/*.scss', sass );
+  gulp.watch(
+    [
+      paths.sass + '/**/*.scss',
+      paths.srcScripts + '/**/*.js'
+    ],
+    webpack
+  );
   gulp.watch( paths.dest + '/**/*.php', html );
 }
 
 // js ES2015 WebPack
-export const scripts = () => {
-  return webpackStream(webpackConfig, webpack)
+export const webpack = () => {
+  return wpStream(wpConfig, wp)
     .pipe($.plumber())
-    .pipe(gulp.dest( paths.scripts ))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(gulp.dest( paths.assets ))
+    .pipe(bs.reload({ stream: true }));
 }
 // Production
-export const scriptsProd = () => {
-  return webpackStream(webpackConfigProd, webpack)
+export const webpackProd = () => {
+  return wpStream(wpConfigProd, wp)
     .pipe($.plumber())
-    .pipe(gulp.dest( paths.scripts ))
-    .pipe(browserSync.reload({ stream: true }));
-}
-
-// jsmin
-export const jsmin = () => {
-      return gulp.src( paths.scripts + '/app.js' )
-  //gulp.src(paths.scripts + '/**/*.js')
-    //.pipe(concat('app.js'))
-    .pipe($.plumber())
-    .pipe($.uglify())
-    .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest( paths.scripts ))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(gulp.dest( paths.assets ))
+    .pipe(bs.reload({ stream: true }));
 }
 
 // sass
@@ -111,29 +104,19 @@ export const sass = () => {
     ]))
     .pipe($.sourcemaps.write( './' ))
     .pipe(gulp.dest( paths.styles ))
-    .pipe(browserSync.reload({stream: true}));
-}
-
-// css-min
-export const cssmin = () => {
-  gulp.src( paths.styles + '/app.css' )
-    // .pipe($.postcss([mqpacker()]))
-    .pipe($.cssmin())
-    .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest( paths.styles ))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(bs.reload({stream: true}));
 }
 
 // HTML
 export const html = () => {
   return gulp.src(paths.dest + '/**/*.php')
     .pipe($.plumber())
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(bs.reload({stream: true}));
 }
 
 // BrowserSync
 export const localServer = () => {
-  browserSync.init({
+  bs.init({
     proxy: siteUrl,
     open: 'external'// URLをUPで開く
   });

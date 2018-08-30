@@ -353,7 +353,7 @@ html {
 body {
   background: #FFF;
   color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
   line-height: 1.6;
   word-wrap: break-all;
   word-break: break-all; }
@@ -1530,6 +1530,12 @@ code {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%); }
 
+.test_hogege {
+  display: -ms-grid;
+  display: grid;
+  width: 360px;
+  height: 200px; }
+
 @media print, screen and (max-width: 699px) {
   #top_page {
     margin: 10px; } }
@@ -2023,4 +2029,5 @@ set Print
   .no_print {
     display: none; } }
 
-/*# sourceMappingURL=app.css.map */
+
+/*# sourceMappingURL=app.css.map*/
