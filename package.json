@@ -38,6 +38,7 @@
     "gulp-imageoptim": "^1.0.9",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
+    "gulp-phplint": "^0.9.0",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
@@ -55,6 +56,7 @@
     "vue-loader": "^15.4.1",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.17.0",
+    "webpack-notifier": "^1.6.0",
     "webpack-stream": "^5.1.1"
   }
 }

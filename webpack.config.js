@@ -1,5 +1,7 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackNotifierPlugin = require('webpack-notifier');
+
 // settings
 // development / production
 const ENV = 'development';
@@ -129,6 +131,7 @@ module.exports = {
   plugins: [
     // Vueを読み込めるようにするため
     new VueLoaderPlugin(),
+    new WebpackNotifierPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),

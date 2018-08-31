@@ -6,8 +6,8 @@ import gulp from 'gulp';
 /*
  * gulp-load-plugins
  *   gulp-consolidate / gulp-iconfont / gulp-imageoptim
- *   gulp-notify / gulp-plumber / gulp-postcss
- *   gulp-rename / gulp-sourcemaps
+ *   gulp-notify / gulp-phplint / gulp-plumber
+ *   gulp-postcss / gulp-rename / gulp-sourcemaps
  */
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
@@ -58,19 +58,26 @@ export const watch = () => {
     webpack
   );
   gulp.watch( paths.dest + '/**/*.php', html );
+  gulp.watch( paths.dest + '/**/*.php', phpLint );
 }
 
 // js ES2015 WebPack
 export const webpack = () => {
   return wpStream(wpConfig, wp)
-    .pipe($.plumber())
+    .pipe($.plumber({
+        errorHandler: $.notify.onError("Error: <%= error.message %>")
+    }))
+    // .pipe($.plumber())
     .pipe(gulp.dest( paths.assets ))
     .pipe(bs.reload({ stream: true }));
 }
 // Production
 export const webpackProd = () => {
   return wpStream(wpConfigProd, wp)
-    .pipe($.plumber())
+    .pipe($.plumber({
+        errorHandler: $.notify.onError("Error: <%= error.message %>")
+    }))
+    // .pipe($.plumber())
     .pipe(gulp.dest( paths.assets ))
     .pipe(bs.reload({ stream: true }));
 }
@@ -78,8 +85,21 @@ export const webpackProd = () => {
 // HTML
 export const html = () => {
   return gulp.src(paths.dest + '/**/*.php')
-    .pipe($.plumber())
+    .pipe($.plumber({
+        errorHandler: $.notify.onError("Error: <%= error.message %>")
+    }))
+    // .pipe($.plumber())
     .pipe(bs.reload({stream: true}));
+}
+// lint
+export const phpLint = () => {
+  return gulp.src(paths.dest + '/**/*.php')
+    .pipe($.plumber({
+        errorHandler: $.notify.onError("Error: <%= error.message %>")
+    }))
+    // .pipe($.plumber())
+    .pipe($.phplint())
+    .pipe($.phplint.reporter());
 }
 
 // BrowserSync
