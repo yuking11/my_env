@@ -5,9 +5,9 @@ require('babel-register');
 import gulp from 'gulp';
 /*
  * gulp-load-plugins
- *   gulp-consolidate / gulp-iconfont / gulp-imageoptim
- *   gulp-notify / gulp-phplint / gulp-plumber
- *   gulp-postcss / gulp-rename / gulp-sourcemaps
+ *   gulp-connect-php / gulp-consolidate / gulp-iconfont
+ *   gulp-imageoptim / gulp-load-plugins / gulp-notify
+ *   gulp-phplint / gulp-plumber / gulp-postcss / gulp-rename
  */
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
@@ -64,20 +64,14 @@ export const watch = () => {
 // js ES2015 WebPack
 export const webpack = () => {
   return wpStream(wpConfig, wp)
-    .pipe($.plumber({
-        errorHandler: $.notify.onError("Error: <%= error.message %>")
-    }))
-    // .pipe($.plumber())
+    .pipe($.plumber())
     .pipe(gulp.dest( paths.assets ))
     .pipe(bs.reload({ stream: true }));
 }
 // Production
 export const webpackProd = () => {
   return wpStream(wpConfigProd, wp)
-    .pipe($.plumber({
-        errorHandler: $.notify.onError("Error: <%= error.message %>")
-    }))
-    // .pipe($.plumber())
+    .pipe($.plumber())
     .pipe(gulp.dest( paths.assets ))
     .pipe(bs.reload({ stream: true }));
 }
@@ -107,6 +101,26 @@ export const localServer = () => {
   bs.init({
     proxy: siteUrl,
     open: 'external'// URLをUPで開く
+  });
+}
+// Current Dir
+export const currentServer = () => {
+  $.connectPhp.server({
+    port: 8001,
+    base: 'public',
+    // for Mac
+    bin: '/Users/yuking/.anyenv/envs/phpenv/shims/php',
+    ini: '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.6/etc/php.ini'
+    // for Windows
+    // bin: 'C:/xampp/php/php.exe',
+    // ini: 'C:/xampp/php/php.ini'
+  }, function () {
+    bs.init({
+      port: 8000,
+      proxy: 'localhost:8001',
+      notify: true,
+      open: 'external'// URLをUPで開く
+    });
   });
 }
 

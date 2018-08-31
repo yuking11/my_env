@@ -33,6 +33,7 @@
     "browser-sync": "^2.24.7",
     "css-loader": "^1.0.0",
     "gulp": "^4.0.0",
+    "gulp-connect-php": "^1.0.3",
     "gulp-consolidate": "^0.2.0",
     "gulp-iconfont": "^10.0.1",
     "gulp-imageoptim": "^1.0.9",
