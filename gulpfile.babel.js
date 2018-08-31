@@ -7,7 +7,7 @@ import gulp from 'gulp';
  * gulp-load-plugins
  *   gulp-consolidate / gulp-iconfont / gulp-imageoptim
  *   gulp-notify / gulp-plumber / gulp-postcss
- *   gulp-rename / gulp-sass / gulp-sourcemaps
+ *   gulp-rename / gulp-sourcemaps
  */
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
