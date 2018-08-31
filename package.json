@@ -41,7 +41,6 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4",
     "gulp.spritesmith": "^6.9.0",
     "lodash": "^4.17.10",
     "mini-css-extract-plugin": "^0.4.2",

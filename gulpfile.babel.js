@@ -49,11 +49,11 @@ const paths   = {
 
 // Watch
 export const watch = () => {
-  // gulp.watch( paths.sass + '/**/*.scss', sass );
   gulp.watch(
     [
       paths.sass + '/**/*.scss',
-      paths.srcScripts + '/**/*.js'
+      paths.srcScripts + '/**/*.js',
+      paths.srcScripts + '/**/*.vue'
     ],
     webpack
   );
@@ -73,38 +73,6 @@ export const webpackProd = () => {
     .pipe($.plumber())
     .pipe(gulp.dest( paths.assets ))
     .pipe(bs.reload({ stream: true }));
-}
-
-// sass
-export const sass = () => {
-  return gulp.src( paths.sass + '/**/*.scss' )
-    //②plumberの引数にエラーメッセージを設定
-    .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      //outputStyle: 'compressed'
-    })
-    // .on('error', $.sass.logError)
-    )
-    .pipe($.postcss([assets({
-      // プロジェクトで公開するパス
-      basePath : paths.dest + '/assets/',
-      // basePathから見た画像フォルダの位置
-      loadPaths: ['img/'],
-      // img/とcss/の相対的な位置
-      relative : 'css/',
-      cachebuster: true
-    })]))
-    .pipe($.postcss([
-      require('autoprefixer')({
-        // browsers: ['last 2 versions']
-        browsers: ['last 2 versions', 'Android >= 5.0'],
-        grid: true
-      })
-    ]))
-    .pipe($.sourcemaps.write( './' ))
-    .pipe(gulp.dest( paths.styles ))
-    .pipe(bs.reload({stream: true}));
 }
 
 // HTML
