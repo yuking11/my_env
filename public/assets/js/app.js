@@ -12273,7 +12273,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var utils = new _utils.Utils();
 var uac = new _uac.Uac();
 
-console.log('hogehoge');
+console.log('fugafuga');
 
 /**
  * sample

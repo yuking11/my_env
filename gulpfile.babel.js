@@ -1,55 +1,14 @@
 /**
- * ENV Settings
- */
-const config = {
-  env: 'local',// local or current
-  os:  'Mac',// Mac or Win
-  url: 'http://gh_my_env.local.test/'// site url
-};
-
-
-/**
- * PHP Settings
- */
-let phpOptions = {};
-if ( config.os === 'Mac' ) {
-  phpOptions = {
-    port: 8001,
-    base: 'public'
-  }
-} else {
-  phpOptions = {
-    port: 8001,
-    base: 'public',
-    bin: 'C:/php/7.2.9/php.exe',
-    ini: 'C:/php/7.2.9/php.ini'
-  }
-}
-
-
-/**
- * BrowserSync Settings
- */
-let bsOptions  = {};
-if ( config.env === 'local' ) {
-  bsOptions = {
-    proxy: config.url,// 経由するURL
-    open:  'external'// URLをUPで開く
-  }
-} else {
-  bsOptions = {
-    port:   8000,
-    proxy:  'localhost:8001',
-    open:   'external'// URLをUPで開く
-  }
-}
-
-
-/**
  * gulp-config
  */
 require('babel-register');
 import gulp from 'gulp';
+/**
+ * site config
+ */
+import config from './config.js';
+const conf  = config.base;
+const paths = config.path;
 /*
  * gulp-load-plugins
  *   gulp-connect-php / gulp-consolidate / gulp-iconfont
@@ -75,19 +34,39 @@ import wpConfigProd from './webpack.config.prod.js';
 
 
 /**
- * site-config
+ * PHP Settings
  */
-const paths = {
-  dest       : './public',
-  srcImages  : './src/_img',
-  srcFonts   : './src/_icons',
-  srcScripts : './src/_js',
-  sass       : './src/_sass',
-  assets     : './public/assets',
-  images     : './public/assets/img',
-  fonts      : './public/assets/fonts',
-  scripts    : './public/assets/js',
-  styles     : './public/assets/css'
+let phpOptions = {};
+if ( conf.os === 'Mac' ) {
+  phpOptions = {
+    port: 8001,
+    base: conf.phpBase
+  }
+} else {
+  phpOptions = {
+    port: 8001,
+    base: conf.phpBase,
+    bin: 'C:/php/' + conf.phpVer + '/php.exe',
+    ini: 'C:/php/' + conf.phpVer + '/php.ini'
+  }
+}
+
+
+/**
+ * BrowserSync Settings
+ */
+let bsOptions  = {};
+if ( conf.env === 'local' ) {
+  bsOptions = {
+    proxy: conf.url,// 経由するURL
+    open:  'external'// URLをUPで開く
+  }
+} else {
+  bsOptions = {
+    port:   8000,
+    proxy:  'localhost:8001',
+    open:   'external'// URLをUPで開く
+  }
 }
 
 
@@ -146,9 +125,9 @@ export const phpLint = () => {
 
 // BrowserSync
 export const server = () => {
-  if ( config.env === 'local' ) {
+  if ( conf.env === 'local' ) {
     bs.init( bsOptions );
-  } else if ( config.env === 'current' ) {
+  } else if ( conf.env === 'current' ) {
     $.connectPhp.server(
       phpOptions,
       function () {
