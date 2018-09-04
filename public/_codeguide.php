@@ -18,10 +18,11 @@
 <header id="l-header" class="l-header l-header-fixed" data-scroll-header>
 
   <h1>Code Guide</h1>
+  <p>PHP version： <?php echo phpversion(); ?></p>
 
 </header>
 
-<section class="l-content-wide" style="margin-top: 100px;">
+<section class="l-content-wide" style="margin-top: 130px;">
   <div class="l-inner">
     <h2 class="mb10">スムーズスクロールテスト</h2>
     <p>

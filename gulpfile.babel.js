@@ -16,7 +16,7 @@ const siteUrl = 'http://gh_my_env.local.test/';
 let phpExe, phpIni;
 if ( OS === 'Mac' ) {
   phpExe = '/Users/yuking/.anyenv/envs/phpenv/shims/php';
-  phpIni = '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.6/etc/php.ini';
+  phpIni = '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.9/etc/php.ini';
 } else {
   phpExe = 'C:/php/7.2.9/php.exe';
   phpIni = 'C:/php/7.2.9/php.ini';
