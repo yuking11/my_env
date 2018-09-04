@@ -1,4 +1,29 @@
-/*
+/**
+ * ENV Settings
+ */
+
+// local or current
+const ENV = 'current';
+// Mac or Win
+const OS  = 'Mac';
+// local host
+const siteUrl = 'http://gh_my_env.local.test/';
+
+
+/**
+ * PHP Settings
+ */
+let phpExe, phpIni;
+if ( OS === 'Mac' ) {
+  phpExe = '/Users/yuking/.anyenv/envs/phpenv/shims/php';
+  phpIni = '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.6/etc/php.ini';
+} else {
+  phpExe = 'C:/php/7.2.9/php.exe';
+  phpIni = 'C:/php/7.2.9/php.ini';
+}
+
+
+/**
  * gulp-config
  */
 require('babel-register');
@@ -26,10 +51,10 @@ import wpStream from 'webpack-stream';
 import wpConfig from './webpack.config.js';
 import wpConfigProd from './webpack.config.prod.js';
 
-/*
+
+/**
  * site-config
  */
-const siteUrl = 'http://gh_my_env.local.test/';// 環境にあわせて変更
 const paths   = {
   dest       : './public',
   srcImages  : './src/_img',
@@ -43,7 +68,8 @@ const paths   = {
   styles     : './public/assets/css'
 }
 
-/*
+
+/**
  * gulp.tasks
  */
 
@@ -97,34 +123,31 @@ export const phpLint = () => {
 }
 
 // BrowserSync
-export const localServer = () => {
-  bs.init({
-    proxy: siteUrl,
-    open: 'external'// URLをUPで開く
-  });
-}
-// Current Dir
-export const currentServer = () => {
-  $.connectPhp.server({
-    port: 8001,
-    base: 'public',
-    // for Mac
-    bin: '/Users/yuking/.anyenv/envs/phpenv/shims/php',
-    ini: '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.6/etc/php.ini'
-    // for Windows
-    // bin: 'C:/xampp/php/php.exe',
-    // ini: 'C:/xampp/php/php.ini'
-  }, function () {
+export const server = () => {
+  if ( ENV === 'local' ) {
     bs.init({
-      port: 8000,
-      proxy: 'localhost:8001',
-      notify: true,
+      proxy: siteUrl,
       open: 'external'// URLをUPで開く
     });
-  });
+  } else if ( ENV === 'current' ) {
+    $.connectPhp.server({
+      port: 8001,
+      base: 'public',
+      bin: phpExe,
+      ini: phpIni
+    }, function () {
+      bs.init({
+        port: 8000,
+        proxy: 'localhost:8001',
+        notify: true,
+        open: 'external'// URLをUPで開く
+      });
+    });
+  }
 }
 
-/*
+
+/**
  * gulp option tasks
  */
 
@@ -209,7 +232,7 @@ export const font = () => {
 // }
 
 
-/*
+/**
  * gulp.default
  */
-export default gulp.series( gulp.parallel(localServer, watch) );
+export default gulp.series( gulp.parallel(server, watch) );
