@@ -1,25 +1,47 @@
 /**
  * ENV Settings
  */
-
-// local or current
-const ENV = 'current';
-// Mac or Win
-const OS  = 'Mac';
-// local host
-const siteUrl = 'http://gh_my_env.local.test/';
+const config = {
+  env: 'local',// local or current
+  os:  'Mac',
+  url: 'http://gh_my_env.local.test/'// Mac or Win
+};
 
 
 /**
  * PHP Settings
  */
-let phpExe, phpIni;
-if ( OS === 'Mac' ) {
-  phpExe = '/Users/yuking/.anyenv/envs/phpenv/shims/php';
-  phpIni = '/Users/yuking/.anyenv/envs/phpenv/versions/7.2.9/etc/php.ini';
+let phpOptions = {};
+if ( config.os === 'Mac' ) {
+  phpOptions = {
+    port: 8001,
+    base: 'public'
+  }
 } else {
-  phpExe = 'C:/php/7.2.9/php.exe';
-  phpIni = 'C:/php/7.2.9/php.ini';
+  phpOptions = {
+    port: 8001,
+    base: 'public',
+    bin: 'C:/php/7.2.9/php.exe',
+    ini: 'C:/php/7.2.9/php.ini'
+  }
+}
+
+
+/**
+ * BrowserSync Settings
+ */
+let bsOptions  = {};
+if ( config.env === 'local' ) {
+  bsOptions = {
+    proxy: config.url,// 経由するURL
+    open:  'external'// URLをUPで開く
+  }
+} else {
+  bsOptions = {
+    port:   8000,
+    proxy:  'localhost:8001',
+    open:   'external'// URLをUPで開く
+  }
 }
 
 
@@ -55,7 +77,7 @@ import wpConfigProd from './webpack.config.prod.js';
 /**
  * site-config
  */
-const paths   = {
+const paths = {
   dest       : './public',
   srcImages  : './src/_img',
   srcFonts   : './src/_icons',
@@ -124,25 +146,15 @@ export const phpLint = () => {
 
 // BrowserSync
 export const server = () => {
-  if ( ENV === 'local' ) {
-    bs.init({
-      proxy: siteUrl,
-      open: 'external'// URLをUPで開く
-    });
-  } else if ( ENV === 'current' ) {
-    $.connectPhp.server({
-      port: 8001,
-      base: paths.dest,
-      bin: phpExe,
-      ini: phpIni
-    }, function () {
-      bs.init({
-        port: 8000,
-        proxy: 'localhost:8001',
-        notify: true,
-        open: 'external'// URLをUPで開く
-      });
-    });
+  if ( config.env === 'local' ) {
+    bs.init( bsOptions );
+  } else if ( config.env === 'current' ) {
+    $.connectPhp.server(
+      phpOptions,
+      function () {
+        bs.init( bsOptions );
+      }
+    );
   }
 }
 
