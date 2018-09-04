@@ -3,8 +3,8 @@
  */
 const config = {
   env: 'local',// local or current
-  os:  'Mac',
-  url: 'http://gh_my_env.local.test/'// Mac or Win
+  os:  'Mac',// Mac or Win
+  url: 'http://gh_my_env.local.test/'// site url
 };
 
 
