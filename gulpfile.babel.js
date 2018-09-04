@@ -132,7 +132,7 @@ export const server = () => {
   } else if ( ENV === 'current' ) {
     $.connectPhp.server({
       port: 8001,
-      base: 'public',
+      base: paths.dest,
       bin: phpExe,
       ini: phpIni
     }, function () {
