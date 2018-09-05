@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulpx webpackProd",
-    "gulp": "gulpx",
-    "sprite": "gulpx sprite",
-    "spriter": "gulp xspriter",
-    "font": "gulpx font"
+    "build": "npx gulp webpackProd",
+    "gulp": "npx gulp",
+    "sprite": "npx gulp sprite",
+    "spriter": "npx gulp spriter",
+    "font": "npx gulp font"
   },
   "repository": {
     "type": "git",
