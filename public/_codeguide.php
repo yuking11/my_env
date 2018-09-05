@@ -35,6 +35,7 @@
       <a href="#table" data-scroll>"テーブルレイアウト"へ</a>&nbsp;&nbsp;
       <a href="#movie" data-scroll>"埋め込みiframeレスポンシブ"へ</a>&nbsp;&nbsp;
       <a href="#buttons" data-scroll>"ボタンレイアウト"へ</a>&nbsp;&nbsp;
+      <a href="#form_layout" data-scroll>"フォーム"へ</a>&nbsp;&nbsp;
     </p>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
@@ -726,6 +727,21 @@ $tab_length: 5;
       <a href="#" class="c-btn c-btn-block c-btn-secondary">secondary</a>
       <a href="#" class="c-btn c-btn-block c-btn-tertiary">tertiary</a>
     </div>
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
+
+<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
+
+<section id="form_layout" class="l-content-wide u-mt40">
+  <div class="l-inner">
+    <h2 class="mb10">フォーム</h2>
+    <form action="#" method="post" id="form">
+      <input type="text" name="name" placeholder="name"><br>
+      <input type="checkbox" name="check[]" value="c1"> check1
+      <input type="checkbox" name="check[]" value="c2"> check2<br>
+      <input type="radio" name="radio" value="r1"> radio1
+      <input type="radio" name="radio" value="r2"> radio2
+    </form>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
