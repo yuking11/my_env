@@ -10,9 +10,9 @@ import gulp from 'gulp';
 import config from './config.js';
 const conf  = config.base;
 const paths = config.path;
-const is_win = process.platform === 'win32';
-const is_mac = process.platform === 'darwin';
-const is_linux = process.platform === 'linux';
+const isWin = process.platform === 'win32';
+const isMac = process.platform === 'darwin';
+const isLinux = process.platform === 'linux';
 /*
  * gulp-load-plugins
  *   gulp-connect-php / gulp-consolidate / gulp-iconfont
@@ -41,7 +41,7 @@ import wpConfigProd from './webpack.config.prod.js';
  * PHP Settings
  */
 let phpOptions = {};
-if ( is_win ) {
+if ( isWin ) {
   phpOptions = {
     port: 8001,
     base: conf.phpBase,
