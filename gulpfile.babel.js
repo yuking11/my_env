@@ -1,3 +1,4 @@
+'use strict';
 /**
  * gulp-config
  */
@@ -9,6 +10,9 @@ import gulp from 'gulp';
 import config from './config.js';
 const conf  = config.base;
 const paths = config.path;
+const is_win = process.platform === 'win32';
+const is_mac = process.platform === 'darwin';
+const is_linux = process.platform === 'linux';
 /*
  * gulp-load-plugins
  *   gulp-connect-php / gulp-consolidate / gulp-iconfont
@@ -37,17 +41,17 @@ import wpConfigProd from './webpack.config.prod.js';
  * PHP Settings
  */
 let phpOptions = {};
-if ( conf.os === 'Mac' ) {
-  phpOptions = {
-    port: 8001,
-    base: conf.phpBase
-  }
-} else {
+if ( is_win ) {
   phpOptions = {
     port: 8001,
     base: conf.phpBase,
     bin: 'C:/php/' + conf.phpVer + '/php.exe',
     ini: 'C:/php/' + conf.phpVer + '/php.ini'
+  }
+} else {
+  phpOptions = {
+    port: 8001,
+    base: conf.phpBase
   }
 }
 

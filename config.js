@@ -3,7 +3,6 @@
  */
 const config = {
   env: 'current',// local or current
-  os:  'Mac',// Mac or Win
   url: 'http://gh_my_env.local.test/',// site url
   phpVer:  '7.2.9',// for Windows
   phpBase: 'public'
