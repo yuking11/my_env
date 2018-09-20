@@ -66,16 +66,24 @@ img {
 // form
 input[type="text"], input[type="email"],
 input[type="number"], input[type="tel"],
-input[type="password"], textarea {
+input[type="password"], textarea, select {
   padding: 4px 6px;
   border: solid 1px #CCC;
-  border-right: none;
-  border-bottom: none;
   border-radius: 3px;
   color: #808080;
-  font-size: fs(10);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .2) inset;
+  @include mq(sp, max, true) {
+    font-size: fs(16);
+  }// @include mq(sp, max, true)
+  @include mq(tab) {
+    font-size: fs(16);
+  }// @include mq(tab)
+  @include mq(pc) {
+    font-size: fs(14);
+  }// @include mq(pc)
 }
+textarea, select {
+  -webkit-overflow-scrolling: touch;
+}// textarea, select
 input[type="radio"],
 input[type="checkbox"] {
   margin: 1px 3px 0 0;
