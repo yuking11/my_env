@@ -381,16 +381,29 @@ img {
 
 input[type="text"], input[type="email"],
 input[type="number"], input[type="tel"],
-input[type="password"], textarea {
+input[type="password"], textarea, select {
   padding: 4px 6px;
   border: solid 1px #CCC;
-  border-right: none;
-  border-bottom: none;
   border-radius: 3px;
-  color: #808080;
-  font-size: 0.625rem;
-  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset; }
+  color: #808080; }
+  @media print, screen and (max-width: 699px) {
+    input[type="text"], input[type="email"],
+    input[type="number"], input[type="tel"],
+    input[type="password"], textarea, select {
+      font-size: 1rem; } }
+  @media print, screen and (min-width: 700px) {
+    input[type="text"], input[type="email"],
+    input[type="number"], input[type="tel"],
+    input[type="password"], textarea, select {
+      font-size: 1rem; } }
+  @media print, screen and (min-width: 960px) {
+    input[type="text"], input[type="email"],
+    input[type="number"], input[type="tel"],
+    input[type="password"], textarea, select {
+      font-size: 0.875rem; } }
+
+textarea, select {
+  -webkit-overflow-scrolling: touch; }
 
 input[type="radio"],
 input[type="checkbox"] {
