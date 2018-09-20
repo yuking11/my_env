@@ -17,7 +17,7 @@ const isLinux = process.platform === 'linux';
  * gulp-load-plugins
  *   gulp-connect-php / gulp-consolidate / gulp-iconfont
  *   gulp-imageoptim / gulp-load-plugins / gulp-notify
- *   gulp-phplint / gulp-plumber / gulp-postcss / gulp-rename
+ *   gulp-phplint / gulp-plumber / gulp-rename
  */
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
@@ -27,9 +27,6 @@ const $ = gulpLoadPlugins();
 // Browser Sync
 import browserSync from 'browser-sync';
 const bs = browserSync.create();
-// Post CSS
-import autoprefixer from 'autoprefixer';
-import assets       from 'postcss-assets';
 // webpack
 import wp from 'webpack';
 import wpStream from 'webpack-stream';
