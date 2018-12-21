@@ -11,7 +11,7 @@ import { Uac } from "./libs/uac";
 const utils = new Utils();
 const uac = new Uac();
 
-console.log('fugafuga');
+// console.log('fugafuga');
 
 /**
  * sample

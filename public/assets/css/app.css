@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* (c) 2016 yuking11.net
+* (c) 2018 yuking11.net
 * @project : yuking11.net
 * @guideline : http://guideline.yuking11.net
 * @version : 2
@@ -325,11 +325,6 @@ video {
    # Selection
    # ================================================================= */
 /* Specify text selection background color and omit drop shadow */
-::-moz-selection {
-  background-color: #b3d4fc;
-  /* Required when declaring ::selection */
-  color: #000;
-  text-shadow: none; }
 
 ::selection {
   background-color: #b3d4fc;
@@ -353,7 +348,7 @@ html {
 body {
   background: #FFF;
   color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
   line-height: 1.6;
   word-wrap: break-all;
   word-break: break-all; }
