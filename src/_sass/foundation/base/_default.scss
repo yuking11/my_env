@@ -67,23 +67,26 @@ img {
 input[type="text"], input[type="email"],
 input[type="number"], input[type="tel"],
 input[type="password"], textarea, select {
-  padding: 4px 6px;
-  border: solid 1px #CCC;
+  padding: .375rem .75rem;
+  border: solid 1px $ui_input_bdr_color;
   border-radius: 3px;
-  color: #808080;
+  color: $font_color;
+  font-size: fs(16);
   @include mq(sp, max, true) {
-    font-size: fs(16);
   }// @include mq(sp, max, true)
   @include mq(tab) {
-    font-size: fs(16);
   }// @include mq(tab)
   @include mq(pc) {
-    font-size: fs(14);
   }// @include mq(pc)
 }
 textarea, select {
   -webkit-overflow-scrolling: touch;
 }// textarea, select
+textarea {
+  display: block;
+  overflow: auto;
+  resize: vertical;
+}// textarea
 input[type="radio"],
 input[type="checkbox"] {
   margin: 1px 3px 0 0;

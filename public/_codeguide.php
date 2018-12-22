@@ -24,7 +24,7 @@
 
 <section class="l-content-wide" style="margin-top: 130px;">
   <div class="l-inner">
-    <h2 class="mb10">スムーズスクロールテスト</h2>
+    <h2 class="u-mb10">スムーズスクロールテスト</h2>
     <p>
       <a href="#grid_layout" data-scroll>"Grid Layout"へ</a>&nbsp;&nbsp;
       <a href="#vue-test" data-scroll>"Vue.js テスト"へ</a>&nbsp;&nbsp;
@@ -36,13 +36,15 @@
       <a href="#movie" data-scroll>"埋め込みiframeレスポンシブ"へ</a>&nbsp;&nbsp;
       <a href="#buttons" data-scroll>"ボタンレイアウト"へ</a>&nbsp;&nbsp;
       <a href="#form_layout" data-scroll>"フォーム"へ</a>&nbsp;&nbsp;
+      <a href="#cards" data-scroll>"Cards"へ</a>&nbsp;&nbsp;
+      <a href="#tooltip" data-scroll>"Tooltip"へ</a>&nbsp;&nbsp;
     </p>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
 <section id="vue-test" class="l-content-wide u-mt40">
   <div class="l-inner">
-    <h2 class="mb10">Vue.js テスト</h2>
+    <h2 class="u-mb10">Vue.js テスト</h2>
     <div id="app">
       Count<br> {{ count }} <br>
       <button @click="countUp">add</button>
@@ -76,7 +78,7 @@
 <section id="grid_layout" class="l-content-wide u-mt40">
   <div class="l-inner">
 
-    <h2 class="mb10">Grid Layout</h2>
+    <h2 class="u-mb10">Grid Layout</h2>
 
     <div class="row">
       <div class="col-1 col-debug">.col-1</div>
@@ -222,7 +224,7 @@
       <div class="col col-sm-2 col-debug">.col</div>
     </div>
 
-    <div class="row">
+    <div class="row u-mb20">
       <div class="col col-sm-2 col-debug">.col</div>
       <div class="col col-sm-2 col-debug">.col</div>
       <div class="col col-sm-2 col-debug">.col</div>
@@ -237,17 +239,48 @@
       <div class="col col-sm-2 col-debug">.col</div>
     </div>
 
+    <h3 class="u-mb10">start</h3>
+
+    <div class="row row-start u-mb20">
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+    </div>
+
+    <h3 class="u-mb10">end</h3>
+
+    <div class="row row-end u-mb20">
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+    </div>
+
+    <h3 class="u-mb10">center</h3>
+
+    <div class="row row-center u-mb20">
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+    </div>
+
+    <h3 class="u-mb10">between</h3>
+
+    <div class="row row-between u-mb20">
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+      <div class="col col-debug">.col</div>
+    </div>
+
   </div>
   <!-- /.l-inner -->
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="image_effetcs" class="l-content-wide u-mt40">
   <div class="l-inner">
 
-    <h2 class="mb10">Image Effects</h2>
+    <h2 class="u-mb10">Image Effects</h2>
 
     <h3>hover on/off</h3>
     <img class="over" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/sample.jpg" alt="">
@@ -357,12 +390,11 @@
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="tab_css" class="l-content-wide u-mt40">
   <div class="l-inner">
 
-    <h2 class="mb10">タブ切り替え（css only）</h2>
+    <h2 class="u-mb10">タブ切り替え（css only）</h2>
     <div class="c-tab">
       <input type="radio" name="c-tab" id="c-tab_ctrl-01" class="c-tab_ctrl" checked="checked">
       <input type="radio" name="c-tab" id="c-tab_ctrl-02" class="c-tab_ctrl">
@@ -484,13 +516,12 @@ $tab_length: 5;
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="acc_css" class="l-content-wide u-mt40">
   <div class="l-inner">
 
-    <h2 class="mb10">アコーディオン（css only）</h2>
-    <p class="mb10"><code>type="radio"</code>を<code>type="checkbox"</code>に変更することで、個別開閉タイプに変更可能。</p>
+    <h2 class="u-mb10">アコーディオン（css only）</h2>
+    <p class="u-mb10"><code>type="radio"</code>を<code>type="checkbox"</code>に変更することで、個別開閉タイプに変更可能。</p>
     <ul class="c-acc">
       <li class="c-acc_item">
         <input type="radio" name="c-acc" id="c-acc_ctrl-1" class="c-acc_ctrl">
@@ -607,12 +638,11 @@ $tab_length: 5;
 </section>
 <!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="table" class="l-content-wide u-mt40">
   <div class="l-inner">
-    <h2 class="mb10">テーブルレイアウト</h2>
-    <h3 class="mb10">default</h3>
+    <h2 class="u-mb10">テーブルレイアウト</h2>
+    <h3 class="u-mb10">default</h3>
     <table class="c-tbl u-mb20">
       <caption class="c-tbl_caption">caption</caption>
       <thead class="c-tbl_thead">
@@ -641,7 +671,7 @@ $tab_length: 5;
       <!-- /.c-tbl_tbody -->
     </table><!-- /.c-tbl -->
 
-    <h3 class="mb10">scroll</h3>
+    <h3 class="u-mb10">scroll</h3>
     <div class="c-tbl_wrap">
       <table class="c-tbl-scroll">
         <caption class="c-tbl_caption">caption</caption>
@@ -678,11 +708,10 @@ $tab_length: 5;
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="movie" class="l-content-wide u-mt40">
   <div class="l-inner">
-    <h2 class="mb10">埋め込みiframeレスポンシブ</h2>
+    <h2 class="u-mb10">埋め込みiframeレスポンシブ</h2>
     <div class="c-framewrap">
       <iframe src="https://www.youtube.com/embed/RhRy-Re68uE" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -690,62 +719,230 @@ $tab_length: 5;
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
 
 <section id="buttons" class="l-content-wide u-mt40">
   <div class="l-inner">
-    <h2 class="mb10">ボタン</h2>
-    <h3 class="mb10">default</h3>
+    <h2 class="u-mb10">ボタン</h2>
+    <h3 class="u-mb10">Default</h3>
     <div class="u-mt10 u-mb10">
-      <a href="#" class="c-btn">button</a>
-      <a href="#" class="c-btn c-btn-caution">caution</a>
-      <a href="#" class="c-btn c-btn-primary">primary</a>
-      <a href="#" class="c-btn c-btn-secondary">secondary</a>
-      <a href="#" class="c-btn c-btn-tertiary">tertiary</a>
+      <button type="button" class="c-btn">Button</button>
+      <button type="button" class="c-btn c-btn-primary">Primary</button>
+      <button type="button" class="c-btn c-btn-secondary">Secondary</button>
+      <button type="button" class="c-btn c-btn-success">Success</button>
+      <button type="button" class="c-btn c-btn-caution">Caution</button>
+      <button type="button" class="c-btn c-btn-warning">Warning</button>
+      <button type="button" class="c-btn c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-link">Link</button>
     </div>
-    <h3 class="mb10">rounded</h3>
+    <h3 class="u-mb10">rounded</h3>
     <div class="u-mt10 u-mb10">
-      <a href="#" class="c-btn c-btn-rounded">button</a>
-      <a href="#" class="c-btn c-btn-rounded c-btn-caution">caution</a>
-      <a href="#" class="c-btn c-btn-rounded c-btn-primary">primary</a>
-      <a href="#" class="c-btn c-btn-rounded c-btn-secondary">secondary</a>
-      <a href="#" class="c-btn c-btn-rounded c-btn-tertiary">tertiary</a>
+      <button type="button" class="c-btn c-btn-rounded">Button</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-primary">Primary</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-secondary">Secondary</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-success">Success</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-caution">Caution</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-warning">Warning</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-dark">Dark</button>
     </div>
-    <h3 class="mb10">pill</h3>
+    <h3 class="u-mb10">pill</h3>
     <div class="u-mt10 u-mb10">
-      <a href="#" class="c-btn c-btn-pill">button</a>
-      <a href="#" class="c-btn c-btn-pill c-btn-caution">caution</a>
-      <a href="#" class="c-btn c-btn-pill c-btn-primary">primary</a>
-      <a href="#" class="c-btn c-btn-pill c-btn-secondary">secondary</a>
-      <a href="#" class="c-btn c-btn-pill c-btn-tertiary">tertiary</a>
+      <button type="button" class="c-btn c-btn-pill">Button</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-primary">Primary</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-secondary">Secondary</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-success">Success</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-caution">Caution</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-warning">Warning</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-dark">Dark</button>
     </div>
-    <h3 class="mb10">block</h3>
+    <h3 class="u-mb10">outline</h3>
     <div class="u-mt10 u-mb10">
-      <a href="#" class="c-btn c-btn-block">button</a>
-      <a href="#" class="c-btn c-btn-block c-btn-caution">caution</a>
-      <a href="#" class="c-btn c-btn-block c-btn-primary">primary</a>
-      <a href="#" class="c-btn c-btn-block c-btn-secondary">secondary</a>
-      <a href="#" class="c-btn c-btn-block c-btn-tertiary">tertiary</a>
+      <button type="button" class="c-btn c-btn-outline">Button</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-primary">Primary</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-secondary">Secondary</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-success">Success</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-caution">Caution</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-warning">Warning</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-dark">Dark</button>
+    </div>
+    <h3 class="u-mb10">size</h3>
+    <div class="u-mt10 u-mb10">
+      <button type="button" class="c-btn c-btn-primary c-btn-small">Small</button>
+      <button type="button" class="c-btn c-btn-primary">Default</button>
+      <button type="button" class="c-btn c-btn-primary c-btn-large">Large</button>
+      <button type="button" class="c-btn c-btn-primary c-btn-xlarge">X-Large</button>
+    </div>
+    <h3 class="u-mb10">block</h3>
+    <div class="u-mt10 u-mb10">
+      <button type="button" class="c-btn c-btn-block">Button</button>
+      <button type="button" class="c-btn c-btn-block c-btn-primary">Primary</button>
+      <button type="button" class="c-btn c-btn-block c-btn-secondary">Secondary</button>
+      <button type="button" class="c-btn c-btn-block c-btn-success">Success</button>
+      <button type="button" class="c-btn c-btn-block c-btn-caution">Caution</button>
+      <button type="button" class="c-btn c-btn-block c-btn-warning">Warning</button>
+      <button type="button" class="c-btn c-btn-block c-btn-dark">Dark</button>
+    </div>
+    <h3 class="u-mb10">disabled</h3>
+    <div class="u-mt10 u-mb10">
+      <button type="button" class="c-btn" disabled>Button</button>
+      <button type="button" class="c-btn c-btn-primary" disabled>Primary</button>
+      <button type="button" class="c-btn c-btn-secondary" disabled>Secondary</button>
+      <button type="button" class="c-btn c-btn-success" disabled>Success</button>
+      <button type="button" class="c-btn c-btn-caution" disabled>Caution</button>
+      <button type="button" class="c-btn c-btn-warning" disabled>Warning</button>
+      <button type="button" class="c-btn c-btn-dark" disabled>Dark</button>
     </div>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
+
+<section id="tooltip" class="l-content-wide u-mt40">
+  <div class="l-inner">
+    <h2 class="u-mb10">Tooltip</h2>
+    <div class="u-mt10 u-mb10">
+      <button type="button" class="c-btn c-tooltip c-tooltip-top" data-tooltip="Tooltip top">Default</button>
+      <button type="button" class="c-btn c-tooltip c-tooltip-right" data-tooltip="Tooltip right">Right</button>
+      <button type="button" class="c-btn c-tooltip c-tooltip-bottom" data-tooltip="Tooltip bottom">Bottom</button>
+      <button type="button" class="c-btn c-tooltip c-tooltip-left" data-tooltip="Tooltip left">Left</button>
+      <button type="button" class="c-btn c-tooltip c-tooltip-top" data-tooltip="line1&#13;&#10;line2">line-break</button>
+    </div>
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
+
 
 <section id="form_layout" class="l-content-wide u-mt40">
   <div class="l-inner">
-    <h2 class="mb10">フォーム</h2>
-    <form action="#" method="post" id="form">
-      <input type="text" name="name" placeholder="name"><br>
-      <input type="checkbox" name="check[]" value="c1"> check1
-      <input type="checkbox" name="check[]" value="c2"> check2<br>
-      <input type="radio" name="radio" value="r1"> radio1
-      <input type="radio" name="radio" value="r2"> radio2
+    <h2 class="u-mb10">フォーム</h2>
+    <form action="#" method="post" id="form" class="c-form">
+
+      <h3 class="u-mb10">text, password, email, tel, number</h3>
+      <p class="u-mb10"><input type="text" name="name1" class="c-form_input " placeholder="name"></p>
+      <p class="u-mb10"><input type="text" name="name2" class="c-form_input c-form-wide" placeholder="name"></p>
+      <p class="u-mb20"><input type="text" name="name3" class="c-form_input" value="name" disabled></p>
+
+      <h3 class="u-mb10">textarea</h3>
+      <p class="u-mb10"><textarea name="message1" class="c-form_textarea">テキストエリア</textarea></p>
+      <p class="u-mb10"><textarea name="message2" class="c-form_textarea c-form-wide">テキストエリア</textarea></p>
+      <p class="u-mb20"><textarea name="message2" class="c-form_textarea" disabled>テキストエリア</textarea></p>
+
+      <h3 class="u-mb10">checkbox</h3>
+      <ul class="row row-start u-mb20">
+        <li class="col">
+          <label class="c-form_label-check">
+            <input type="checkbox" name="check[]" value="c1">
+            <span>check1</span>
+          </label>
+        </li>
+        <li class="col">
+          <label class="c-form_label-check">
+            <input type="checkbox" name="check[]" value="c2">
+            <span>check2</span>
+          </label>
+        <li class="col">
+          <label class="c-form_label-check">
+            <input type="checkbox" name="check[]" value="c3">
+            <span>check3<br>check3</span>
+          </label>
+        </li>
+        <li class="col">
+          <label class="c-form_label-check">
+            <input type="checkbox" name="check[]" value="c4"  disabled="disabled">
+            <span>check4</span>
+          </label>
+        </li>
+      </ul>
+
+      <h3 class="u-mb10">radio</h3>
+      <ul class="row row-start u-mb20">
+        <li class="col">
+          <label class="c-form_label-radio">
+            <input type="radio" name="radio" value="r1">
+            <span>radio1</span>
+          </label>
+        </li>
+        <li class="col">
+          <label class="c-form_label-radio">
+            <input type="radio" name="radio" value="r2">
+            <span>radio2</span>
+          </label>
+        </li>
+        <li class="col">
+          <label class="c-form_label-radio">
+            <input type="radio" name="radio" value="r3">
+            <span>radio3<br>radio3</span>
+          </label>
+        </li>
+        <li class="col">
+          <label class="c-form_label-radio">
+            <input type="radio" name="radio" value="r4"  disabled="disabled">
+            <span>radio4</span>
+          </label>
+        </li>
+      </ul>
+
+      <h3 class="u-mb10">select</h3>
+      <label class="c-form_select-label">
+        <select name="select1" class="c-form_select">
+          <option value="s1">option1</option>
+          <option value="s2">option2</option>
+          <option value="s3">option3</option>
+          <option value="s4">option4</option>
+          <option value="s5">option5</option>
+        </select>
+      </label>
+      <label class="c-form_select-label c-form-wide u-mt10">
+        <select name="select2" class="c-form_select">
+          <option value="s1">option1</option>
+          <option value="s2">option2</option>
+          <option value="s3">option3</option>
+          <option value="s4">option4</option>
+          <option value="s5">option5</option>
+        </select>
+      </label>
+      <label class="c-form_select-label c-form-wide u-mt10">
+        <select name="select3" class="c-form_select" disabled="disabled">
+          <option value="s1">option1</option>
+          <option value="s2">option2</option>
+          <option value="s3">option3</option>
+          <option value="s4">option4</option>
+          <option value="s5">option5</option>
+        </select>
+      </label>
+
     </form>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 
-<p class="u-mt30 u-mr20 u-tar"><a href="#" data-scroll>Page Top</a></p>
+
+<section id="cards" class="l-content-wide u-mt40">
+  <div class="l-inner">
+    <h2 class="u-mb10">Cards</h2>
+    <div class="row">
+      <div class="col c-card" style="width: 20rem;">
+        <img src="http://placehold.jp/720x480.png?text=Card Img" alt="" class="c-card_img">
+        <div class="c-card_body">
+          <h3 class="c-card_ttl">Card title</h3>
+          <p class="c-card_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, magnam, ipsam? Harum magni labore tempora incidunt, voluptatibus sit explicabo eos quas odit, eius natus saepe ipsam ad quidem recusandae beatae!</p>
+          <a href="#" class="c-btn c-btn-primary u-mta">Button</a>
+        </div>
+      </div>
+      <div class="col c-card" style="width: 20rem;">
+        <img src="http://placehold.jp/720x480.png?text=Card Img" alt="" class="c-card_img">
+        <div class="c-card_body">
+          <h3 class="c-card_ttl">Card title</h3>
+          <p class="c-card_txt">Lorem ipsum dolor sit amet!</p>
+          <a href="#" class="c-btn c-btn-primary u-mta">Button</a>
+        </div>
+      </div>
+      <div class="col c-card" style="width: 20rem;">
+        <img src="http://placehold.jp/720x480.png?text=Card Img" alt="" class="c-card_img">
+        <div class="c-card_body">
+          <h3 class="c-card_ttl">Card title</h3>
+          <p class="c-card_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, magnam, ipsam? Harum magni labore tempora incidunt, voluptatibus sit explicabo eos quas odit, eius natus saepe ipsam ad quidem recusandae beatae!</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
 
 
 <div class="l-content-wide u-mt40 u-mb40">

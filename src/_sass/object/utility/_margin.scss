@@ -3,6 +3,11 @@
 // Utility - margin
 // -------------------------------------------
 
+  .u-mga { margin: auto !important; }
+  .u-mta { margin-top: auto !important; }
+  .u-mra { margin-right: auto !important; }
+  .u-mba { margin-bottom: auto !important; }
+  .u-mla { margin-left: auto !important; }
   @for $i from 0 through 10 {
     .u-mg#{$i * 5} { margin: 5px * $i !important; }
     .u-mt#{$i * 5} { margin-top: 5px * $i !important; }

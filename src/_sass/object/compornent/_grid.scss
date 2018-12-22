@@ -14,6 +14,31 @@
   margin-right: -($ct_gutter_half);
   margin-left: -($ct_gutter_half);
 
+  &.row-start {
+    justify-content: flex-start;
+    .col {
+      flex: inherit;
+    }// .col
+  }// &.row-start
+  &.row-end {
+    justify-content: flex-end;
+    .col {
+      flex: inherit;
+    }// .col
+  }// &.row-end
+  &.row-center {
+    justify-content: center;
+    .col {
+      flex: inherit;
+    }// .col
+  }// &.row-center
+  &.row-between {
+    justify-content: space-between;
+    .col {
+      flex: inherit;
+    }// .col
+  }// &.row-between
+
   .col {
     flex-grow: 1;
     margin: $ct_gutter_half;
