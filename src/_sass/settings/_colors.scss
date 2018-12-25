@@ -4,6 +4,24 @@
 //
 // =====================================================
 
+// Palette
+// ================================== //
+$color_red: #EF3724;
+$color_orange: #F90;
+$color_yellow: #FFD600;
+$color_green: #28A745;
+$color_teal: #66E4E6;
+$color_blue: #3E75E1;
+$color_indigo: #716FEA;
+$color_purple: #9371E2;
+$color_pink: #FE77A6;
+
+$color_dark: #414A63;
+$color_light: #EAEAEA;
+$color_black: #252627;
+$color_white: #FFF;
+
+
 // Base
 // ================================== //
 
@@ -11,13 +29,13 @@
 $body_bg_value: #FFF;
 
 // main color (base color)
-$main_color: #3E75E1;
+$main_color: $color_blue;
 
 // sub color
-$sub_color: #C5F4FF;
+$sub_color: $color_orange;
 
 // accent color
-$accent_color: #D2CBBB;
+$accent_color: $color_green;
 
 // base text color
 $font_color: #333;
@@ -31,14 +49,10 @@ $font_color_dark: #000;
 // ================================== //
 
 // base link color
-$link_color_primary: #00C;
-$link_color_hover: #F60;
-$link_color_active: #00F;
-$link_color_visited: #551A8B;
-$link_bg_color: #FFF0D9;
-
-$link_color_secondary: $accent_color;
-$link_color_tertiary: #0064FF;
+$link_color_primary: $main_color;
+$link_color_hover: $sub_color;
+$link_color_active: $sub_color;
+$link_color_visited: $color_purple;
 
 
 // Buttons
@@ -46,31 +60,35 @@ $link_color_tertiary: #0064FF;
 
 $btn_bg_color_default: #CCC;
 $btn_bdr_color_default: #CCC;
-$btn_txt_color_default: #333;
+$btn_txt_color_default: $font_color;
 
-$btn_bg_color_primary: #3E75E1;
-$btn_bdr_color_primary: #3E75E1;
-$btn_txt_color_primary: #FFF;
+$btn_bg_color_primary: $color_blue;
+$btn_bdr_color_primary: $color_blue;
+$btn_txt_color_primary: $color_white;
 
-$btn_bg_color_secondary: #F90;
-$btn_bdr_color_secondary: #F90;
-$btn_txt_color_secondary: #FFF;
+$btn_bg_color_secondary: $color_orange;
+$btn_bdr_color_secondary: $color_orange;
+$btn_txt_color_secondary: $color_white;
 
-$btn_bg_color_success: #28A745;
-$btn_bdr_color_success: #28A745;
-$btn_txt_color_success: #FFF;
+$btn_bg_color_success: $color_green;
+$btn_bdr_color_success: $color_green;
+$btn_txt_color_success: $color_white;
 
-$btn_bg_color_caution: #EF3724;
-$btn_bdr_color_caution: #EF3724;
-$btn_txt_color_caution: #FFF;
+$btn_bg_color_caution: $color_red;
+$btn_bdr_color_caution: $color_red;
+$btn_txt_color_caution: $color_white;
 
-$btn_bg_color_warning: #FFD600;
-$btn_bdr_color_warning: #FFD600;
-$btn_txt_color_warning: #000;
+$btn_bg_color_warning: $color_yellow;
+$btn_bdr_color_warning: $color_yellow;
+$btn_txt_color_warning: $color_black;
 
-$btn_bg_color_dark: #000;
-$btn_bdr_color_dark: #000;
-$btn_txt_color_dark: #FFF;
+$btn_bg_color_dark: $color_dark;
+$btn_bdr_color_dark: $color_dark;
+$btn_txt_color_dark: $color_white;
+
+$btn_bg_color_black: $color_black;
+$btn_bdr_color_black: $color_black;
+$btn_txt_color_black: $color_white;
 
 $btn_bg_color_link: transparent;
 $btn_bdr_color_link: transparent;
