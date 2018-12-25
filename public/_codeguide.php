@@ -38,6 +38,7 @@
       <a href="#form_layout" data-scroll>"フォーム"へ</a>&nbsp;&nbsp;
       <a href="#cards" data-scroll>"Cards"へ</a>&nbsp;&nbsp;
       <a href="#tooltip" data-scroll>"Tooltip"へ</a>&nbsp;&nbsp;
+      <a href="#others" data-scroll>"その他"へ</a>&nbsp;&nbsp;
     </p>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
@@ -941,6 +942,17 @@ $tab_length: 5;
         </div>
       </div>
     </div>
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
+
+
+<section id="others" class="l-content-wide u-mt40">
+  <div class="l-inner">
+    <h2 class="u-mb10">Others</h2>
+    <h3 class="u-mb10">line-break</h3>
+    <p>改行位置をレスポンシブ指定する。<br class="u-disp-sp">
+      window 700px未満 だとここで改行される。<br class="u-disp-pc">
+      window 700px以上 だとここで改行される。</p>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
 

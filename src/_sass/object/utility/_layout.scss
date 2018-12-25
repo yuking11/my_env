@@ -25,4 +25,21 @@
     }// &::after
   }// .cf
 
+  .u-disp {
+    @include mq(sp, max, true) {
+      &-pc {
+        display: none !important;
+      }// &-pc
+    }// @include mq(sp, max, true)
+    @include mq(tab) {
+      &-sp {
+        display: none !important;
+      }// &-sp
+    }// @include mq(tab)
+    @include mq(pc) {
+    }// @include mq(pc)
+    @include mq(wide) {
+    }// @include mq(wide)
+  }// .u-disp
+
 }

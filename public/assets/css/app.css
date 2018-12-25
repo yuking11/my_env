@@ -2001,6 +2001,14 @@ code {
   display: block;
   clear: both; }
 
+@media print, screen and (max-width: 699px) {
+  .u-disp-pc {
+    display: none !important; } }
+
+@media print, screen and (min-width: 700px) {
+  .u-disp-sp {
+    display: none !important; } }
+
 .u-indent {
   text-indent: 1em; }
 
