@@ -17,7 +17,6 @@
 // ================================== //
 .c-tbl {
 
-  table-layout: fixed;
   background-color: #CCC;
   border-collapse: separate;
   border-spacing: 1px;
@@ -33,13 +32,13 @@
 
   th {
     background-color: #FFF;
-    padding: $ct_gutter_half;
+    padding: $ct_gutter;
     text-align: left;
   }// th
 
   td {
     background-color: #FFF;
-    padding: $ct_gutter_half;
+    padding: $ct_gutter;
   }// td
 
   .c-tbl_empty {
@@ -49,6 +48,10 @@
   &-full {
     width: 100%;
   }// &-full
+
+  &-fixed {
+    table-layout: fixed;
+  }// &-fixed
 
   &-stripe {
     tbody {
@@ -72,6 +75,14 @@
   }// &-scroll
 
   @include mq(sp, max, true) {
+
+    th {
+      padding: $ct_gutter_half;
+    }// th
+
+    td {
+      padding: $ct_gutter_half $ct_gutter_half $ct_gutter;
+    }// td
 
     &.c-tbl-block {
       display: block;
