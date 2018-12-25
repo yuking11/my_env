@@ -8,7 +8,6 @@
 
   width: calc(100% + #{$ct_gutter});
   display: flex;
-  align-items: stretch;
   // justify-content: space-between;
   flex-wrap: wrap;
   margin-right: -($ct_gutter_half);
@@ -16,28 +15,35 @@
 
   &.row-start {
     justify-content: flex-start;
-    .col {
-      flex: inherit;
-    }// .col
   }// &.row-start
   &.row-end {
     justify-content: flex-end;
-    .col {
-      flex: inherit;
-    }// .col
   }// &.row-end
   &.row-center {
     justify-content: center;
-    .col {
-      flex: inherit;
-    }// .col
   }// &.row-center
   &.row-between {
     justify-content: space-between;
+  }// &.row-between
+
+  &.row-vertical-start {
+    align-items: flex-start;
+  }// &.row-vertical-start
+  &.row-vertical-end {
+    align-items: flex-end;
+  }// &.row-vertical-end
+  &.row-vertical-center {
+    align-items: center;
+  }// &.row-vertical-center
+  &.row-vertical-between {
+    align-items: space-between;
+  }// &.row-vertical-between
+
+  &[class*="row-"] {
     .col {
       flex: inherit;
     }// .col
-  }// &.row-between
+  }// &[class*="row-"]
 
   .col {
     flex-grow: 1;
