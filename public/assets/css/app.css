@@ -535,9 +535,6 @@ code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-right: -0.5rem;
@@ -546,34 +543,38 @@ code {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
-    .row.row-start .col {
-      -webkit-box-flex: inherit;
-          -ms-flex: inherit;
-              flex: inherit; }
   .row.row-end {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
-    .row.row-end .col {
-      -webkit-box-flex: inherit;
-          -ms-flex: inherit;
-              flex: inherit; }
   .row.row-center {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    .row.row-center .col {
-      -webkit-box-flex: inherit;
-          -ms-flex: inherit;
-              flex: inherit; }
   .row.row-between {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    .row.row-between .col {
-      -webkit-box-flex: inherit;
-          -ms-flex: inherit;
-              flex: inherit; }
+  .row.row-vertical-start {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .row.row-vertical-end {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+  .row.row-vertical-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .row.row-vertical-between {
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between; }
+  .row[class*="row-"] .col {
+    -webkit-box-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit; }
   .row .col {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -1169,22 +1170,23 @@ code {
   -webkit-overflow-scrolling: touch; }
 
 .c-tbl {
-  table-layout: fixed;
   background-color: #CCC;
   border-collapse: separate;
   border-spacing: 1px; }
   .c-tbl th {
     background-color: #FFF;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: left; }
   .c-tbl td {
     background-color: #FFF;
-    padding: 0.5rem; }
+    padding: 1rem; }
   .c-tbl .c-tbl_empty {
     background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(49%, transparent), color-stop(51%, #AAA), color-stop(51%, transparent), to(transparent));
     background-image: linear-gradient(to top right, transparent, transparent 49%, #AAA 51%, transparent 51%, transparent 100%); }
   .c-tbl-full {
     width: 100%; }
+  .c-tbl-fixed {
+    table-layout: fixed; }
   .c-tbl-stripe tbody tr:nth-child(odd) th, .c-tbl-stripe tbody tr:nth-child(odd) td {
     background-color: #F7F7F7; }
   .c-tbl-noborder {
@@ -1193,6 +1195,10 @@ code {
   .c-tbl-scroll th, .c-tbl-scroll td {
     white-space: nowrap; }
   @media print, screen and (max-width: 699px) {
+    .c-tbl th {
+      padding: 0.5rem; }
+    .c-tbl td {
+      padding: 0.5rem 0.5rem 1rem; }
     .c-tbl.c-tbl-block {
       display: block;
       border: 1px solid #CCC;
