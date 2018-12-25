@@ -191,6 +191,27 @@
     }// &.c-btn-outline
   }// &-dark
 
+  // black
+  &-black {
+    background: $btn_bg_color_black;
+    border-color: $btn_bdr_color_black;
+    color: $btn_txt_color_black;
+    &:hover, &:focus {
+      background-color: rgba($btn_bg_color_black, .65);
+      color: $btn_txt_color_black;
+    }// &:hover, &:focus
+    &:disabled {
+      background-color: rgba($btn_bg_color_black, .65);
+    }// &:disabled
+    &.c-btn-outline {
+      color: $btn_bdr_color_black;
+      &:hover, &:focus {
+        background-color: $btn_bg_color_black;
+        color: $btn_txt_color_black;
+      }// &:hover, &:focus
+    }// &.c-btn-outline
+  }// &-dark
+
   // link
   &-link {
     background: $btn_bg_color_link;
