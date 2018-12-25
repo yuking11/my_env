@@ -1,100 +1,8 @@
 //=====================================================
 //
 // Table Style
-// - default
-// - scroll
 //
 // =====================================================
-
-// table - default
-// ================================== //
-.c-tbl {
-
-  table-layout: fixed;
-  background-color: #CCC;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 1px;
-
-  .c-tbl_caption {
-  }// .c-tbl_caption
-
-  .c-tbl_thead {
-    .c-tbl_th {
-      background-color: #FED;
-    }// .c-tbl_th
-  }// .c-tbl_thead
-
-  .c-tbl_tbody {
-    .c-tbl_th {
-      background-color: #FDE;
-    }// .c-tbl_th
-  }// .c-tbl_tbody
-
-  .c-tbl_tfoot {
-  }// .c-tbl_tfoot
-
-  .c-tbl_tr {
-  }// .c-tbl_tr
-
-  .c-tbl_th {
-    padding: $ct_gutter_half;
-    text-align: left;
-  }// .c-tbl_th
-
-  .c-tbl_td {
-    background-color: #FFF;
-    padding: $ct_gutter_half;
-  }// .c-tbl_td
-
-  @include mq(sp, max, true) {
-
-    display: block;
-    border: 1px solid #CCC;
-    border-bottom: none;
-
-    [class*="c-tbl_"] {
-      display: block;
-    }// [class*="c-tbl_"]
-
-    .c-tbl_head {
-      .c-tbl_th {
-        &:empty {
-          display: none;
-        }// &:empty
-      }// .c-tbl_th
-    }// .c-tbl_head
-
-    .c-tbl_caption {
-      border-bottom: 1px solid #CCC;
-    }// .c-tbl_caption
-
-    .c-tbl_th {
-      border-bottom: 1px solid #CCC;
-    }// .c-tbl_th
-
-    .c-tbl_td {
-      border-bottom: 1px solid #CCC;
-    }// .c-tbl_td
-
-  }// @include mq(sp, max, true)
-  @include mq(tab) {
-  }// @include mq(tab)
-  @include mq(pc) {
-
-    .c-tbl_head {
-      .c-tbl_th {
-        &:empty {
-          @include tilt_bordder;
-        }// &:empty
-      }// .c-tbl_th
-    }// .c-tbl_head
-
-  }// @include mq(pc)
-  @include mq(wide) {
-  }// @include mq(wide)
-}// .c-tbl
-
 
 // table - scroll
 // ================================== //
@@ -104,36 +12,105 @@
   -webkit-overflow-scrolling: touch;
 }// .c-tbl_wrap
 
-.c-tbl-scroll {
+
+// table - default
+// ================================== //
+.c-tbl {
+
   table-layout: fixed;
   background-color: #CCC;
-  width: 100%;
   border-collapse: separate;
   border-spacing: 1px;
 
-  .c-tbl_thead {
-    .c-tbl_th {
-      background-color: #FED;
-      &:empty {
-        @include tilt_bordder(#FED);
-      }// &:empty
-    }// .c-tbl_th
-  }// .c-tbl_thead
+  caption {
+  }// caption
 
-  .c-tbl_tbody {
-    .c-tbl_th {
-      background-color: #FDE;
-    }// .c-tbl_th
-  }// .c-tbl_tbody
+  tfoot {
+  }// tfoot
 
-  .c-tbl_th {
-    padding: $ct_gutter_half;
-    text-align: left;
-  }// .c-tbl_th
+  tr {
+  }// tr
 
-  .c-tbl_td {
+  th {
     background-color: #FFF;
     padding: $ct_gutter_half;
-  }// .c-tbl_td
+    text-align: left;
+  }// th
 
-}// .c-tbl-scroll
+  td {
+    background-color: #FFF;
+    padding: $ct_gutter_half;
+  }// td
+
+  .c-tbl_empty {
+    @include tilt_bordder;
+  }// .c-tbl_empty
+
+  &-full {
+    width: 100%;
+  }// &-full
+
+  &-stripe {
+    tbody {
+      tr:nth-child(odd) {
+        th, td {
+          background-color: #F7F7F7;
+        }// th, td
+      }// tr:nth-child(odd)
+    }// tbody
+  }// &-stripe
+
+  &-noborder {
+    border-collapse: collapse;
+    border-spacing: none;
+  }// &-noborder
+
+  &-scroll {
+    th, td {
+      white-space: nowrap;
+    }// th, td
+  }// &-scroll
+
+  @include mq(sp, max, true) {
+
+    &.c-tbl-block {
+      display: block;
+      border: 1px solid #CCC;
+      border-bottom: none;
+      caption,
+      thead,
+      tbody,
+      tfoot,
+      tr,
+      th,
+      td {
+        display: block;
+      }// [class*="c-tbl_"]
+      th {
+      }// th
+      caption {
+        border-bottom: 1px solid #CCC;
+      }// caption
+      th {
+        border-bottom: 1px solid #CCC;
+      }// th
+      td {
+        border-bottom: 1px solid #CCC;
+      }// td
+      .c-tbl_empty {
+        display: none;
+      }// .c-tbl_empty
+    }// &.c-tbl-block;
+
+    &-scroll {
+      min-width: 200%;
+    }// &-scroll
+
+  }// @include mq(sp, max, true)
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .c-tbl

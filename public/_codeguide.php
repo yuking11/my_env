@@ -26,6 +26,7 @@
   <div class="l-inner">
     <h2 class="u-mb10">スムーズスクロールテスト</h2>
     <p>
+      <a href="#colors" data-scroll>"Color"へ</a>&nbsp;&nbsp;
       <a href="#grid_layout" data-scroll>"Grid Layout"へ</a>&nbsp;&nbsp;
       <a href="#vue-test" data-scroll>"Vue.js テスト"へ</a>&nbsp;&nbsp;
       <a href="#image_effetcs" data-scroll>"Image Effects"へ</a>&nbsp;&nbsp;
@@ -42,6 +43,74 @@
     </p>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
+
+
+<section id="colors" class="l-content-wide u-mt40">
+  <div class="l-inner">
+
+    <h2 class="u-mb10">Color Parette</h2>
+    <table class="c-tbl">
+      <col>
+      <col style="width: 5em;">
+      <tbody>
+        <tr>
+          <th class="u-bg_white">red</th>
+          <td class="u-bg_red">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">orange</th>
+          <td class="u-bg_orange">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">yellow</th>
+          <td class="u-bg_yellow">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">green</th>
+          <td class="u-bg_green">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">teal</th>
+          <td class="u-bg_teal">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">blue</th>
+          <td class="u-bg_blue">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">indigo</th>
+          <td class="u-bg_indigo">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">purple</th>
+          <td class="u-bg_purple">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">pink</th>
+          <td class="u-bg_pink">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">dark</th>
+          <td class="u-bg_dark">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">light</th>
+          <td class="u-bg_light">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">black</th>
+          <td class="u-bg_black">&nbsp;</td>
+        </tr>
+        <tr>
+          <th class="u-bg_white">white</th>
+          <td class="u-bg_white">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table><!-- /.c-tbl -->
+
+  </div><!-- /.l-inner -->
+</section><!-- /.l-content-wide -->
+
 
 <section id="vue-test" class="l-content-wide u-mt40">
   <div class="l-inner">
@@ -645,64 +714,177 @@ $tab_length: 5;
     <h2 class="u-mb10">テーブルレイアウト</h2>
     <h3 class="u-mb10">default</h3>
     <table class="c-tbl u-mb20">
-      <caption class="c-tbl_caption">caption</caption>
-      <thead class="c-tbl_thead">
-        <tr class="c-tbl_tr">
-          <th class="c-tbl_th">thead</th>
-          <th class="c-tbl_th">thead</th>
-          <th class="c-tbl_th">thead</th>
+      <caption>caption</caption>
+      <thead>
+        <tr>
+          <th class="c-tbl_empty u-bg_light"></th>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
         </tr>
       </thead>
-      <!-- /.c-tbl_thead -->
-      <tbody class="c-tbl_tbody">
-        <tr class="c-tbl_tr">
-          <th class="c-tbl_th">tbody th</th>
-          <td class="c-tbl_td">tbody td</td>
-          <td class="c-tbl_td">tbody td</td>
+      <tbody>
+        <tr>
+          <th class="u-bg_light">tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
         </tr>
       </tbody>
-      <!-- /.c-tbl_tbody -->
-      <tfoot class="c-tbl_tfoot">
-        <tr class="c-tbl_tr">
-          <td class="c-tbl_td">tfoot td</td>
-          <td class="c-tbl_td">tfoot td</td>
-          <td class="c-tbl_td">tfoot td</td>
+      <tfoot>
+        <tr>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
         </tr>
       </tfoot>
-      <!-- /.c-tbl_tbody -->
+    </table><!-- /.c-tbl -->
+
+    <h3 class="u-mb10">No Border</h3>
+    <table class="c-tbl c-tbl-noborder u-mb20">
+      <caption>caption</caption>
+      <thead>
+        <tr>
+          <th class="c-tbl_empty u-bg_light"></th>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="u-bg_light">tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+        </tr>
+      </tfoot>
+    </table><!-- /.c-tbl -->
+
+    <h3 class="u-mb10">Stripe</h3>
+    <table class="c-tbl c-tbl-stripe u-mb20">
+      <caption>caption</caption>
+      <thead>
+        <tr>
+          <th class="c-tbl_empty"></th>
+          <th>thead</th>
+          <th>thead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+        <tr>
+          <th>tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+        <tr>
+          <th>tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+        <tr>
+          <th>tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+        </tr>
+      </tfoot>
+    </table><!-- /.c-tbl -->
+
+    <h3 class="u-mb10">full width</h3>
+    <table class="c-tbl c-tbl-full u-mb20">
+      <caption>caption</caption>
+      <thead>
+        <tr>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="u-bg_light">tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+        </tr>
+      </tfoot>
+    </table><!-- /.c-tbl -->
+
+    <h3 class="u-mb10">Block</h3>
+    <table class="c-tbl c-tbl-block u-mb20">
+      <caption>caption</caption>
+      <thead>
+        <tr>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
+          <th class="u-bg_light">thead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="u-bg_light">tbody th</th>
+          <td>tbody td</td>
+          <td>tbody td</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+          <td>tfoot td</td>
+        </tr>
+      </tfoot>
     </table><!-- /.c-tbl -->
 
     <h3 class="u-mb10">scroll</h3>
     <div class="c-tbl_wrap">
-      <table class="c-tbl-scroll">
-        <caption class="c-tbl_caption">caption</caption>
-        <thead class="c-tbl_thead">
-          <tr class="c-tbl_tr">
-            <th class="c-tbl_th" style="width: 110px;"></th>
-            <th class="c-tbl_th" style="width: 220px;">thead</th>
-            <th class="c-tbl_th" style="width: 220px;">thead</th>
-            <th class="c-tbl_th" style="width: 220px;">thead</th>
+      <table class="c-tbl c-tbl-scroll">
+        <caption>caption</caption>
+        <thead>
+          <tr>
+            <th class="c-tbl_empty u-bg_light" style="width: 110px;"></th>
+            <th class="u-bg_light" style="width: 220px;">thead</th>
+            <th class="u-bg_light" style="width: 220px;">thead</th>
+            <th class="u-bg_light" style="width: 220px;">thead</th>
           </tr>
         </thead>
-        <!-- /.c-tbl_thead -->
-        <tbody class="c-tbl_tbody">
-          <tr class="c-tbl_tr">
-            <th class="c-tbl_th">tbody th</th>
-            <td class="c-tbl_td">tbody td</td>
-            <td class="c-tbl_td">tbody td</td>
-            <td class="c-tbl_td">tbody td</td>
+        <tbody>
+          <tr>
+            <th class="u-bg_light">tbody th</th>
+            <td>tbody td</td>
+            <td>tbody td</td>
+            <td>tbody td</td>
           </tr>
         </tbody>
-        <!-- /.c-tbl_tbody -->
-        <tfoot class="c-tbl_tfoot">
-          <tr class="c-tbl_tr">
-            <td class="c-tbl_td">tfoot td</td>
-            <td class="c-tbl_td">tfoot td</td>
-            <td class="c-tbl_td">tfoot td</td>
-            <td class="c-tbl_td">tfoot td</td>
+        <tfoot>
+          <tr>
+            <td>tfoot td</td>
+            <td>tfoot td</td>
+            <td>tfoot td</td>
+            <td>tfoot td</td>
           </tr>
         </tfoot>
-        <!-- /.c-tbl_tbody -->
       </table><!-- /.c-tbl-scroll -->
     </div><!-- /.c-tbl_wrap -->
 
@@ -733,6 +915,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-caution">Caution</button>
       <button type="button" class="c-btn c-btn-warning">Warning</button>
       <button type="button" class="c-btn c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-black">Black</button>
       <button type="button" class="c-btn c-btn-link">Link</button>
     </div>
     <h3 class="u-mb10">rounded</h3>
@@ -744,6 +927,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-rounded c-btn-caution">Caution</button>
       <button type="button" class="c-btn c-btn-rounded c-btn-warning">Warning</button>
       <button type="button" class="c-btn c-btn-rounded c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-rounded c-btn-black">Black</button>
     </div>
     <h3 class="u-mb10">pill</h3>
     <div class="u-mt10 u-mb10">
@@ -754,6 +938,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-pill c-btn-caution">Caution</button>
       <button type="button" class="c-btn c-btn-pill c-btn-warning">Warning</button>
       <button type="button" class="c-btn c-btn-pill c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-pill c-btn-black">Black</button>
     </div>
     <h3 class="u-mb10">outline</h3>
     <div class="u-mt10 u-mb10">
@@ -764,6 +949,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-outline c-btn-caution">Caution</button>
       <button type="button" class="c-btn c-btn-outline c-btn-warning">Warning</button>
       <button type="button" class="c-btn c-btn-outline c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-outline c-btn-black">Black</button>
     </div>
     <h3 class="u-mb10">size</h3>
     <div class="u-mt10 u-mb10">
@@ -781,6 +967,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-block c-btn-caution">Caution</button>
       <button type="button" class="c-btn c-btn-block c-btn-warning">Warning</button>
       <button type="button" class="c-btn c-btn-block c-btn-dark">Dark</button>
+      <button type="button" class="c-btn c-btn-block c-btn-black">Black</button>
     </div>
     <h3 class="u-mb10">disabled</h3>
     <div class="u-mt10 u-mb10">
@@ -791,6 +978,7 @@ $tab_length: 5;
       <button type="button" class="c-btn c-btn-caution" disabled>Caution</button>
       <button type="button" class="c-btn c-btn-warning" disabled>Warning</button>
       <button type="button" class="c-btn c-btn-dark" disabled>Dark</button>
+      <button type="button" class="c-btn c-btn-black" disabled>Black</button>
     </div>
   </div><!-- /.l-inner -->
 </section><!-- /.l-content-wide -->
