@@ -12378,41 +12378,33 @@ module.exports = g;
 /*!***************************!*\
   !*** ./src/_js/_index.js ***!
   \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var sweet_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweet-scroll */ "./node_modules/sweet-scroll/sweet-scroll.js");
+/* harmony import */ var sweet_scroll__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweet_scroll__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _libs_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./libs/utils */ "./src/_js/libs/utils.js");
+/* harmony import */ var _libs_uac__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./libs/uac */ "./src/_js/libs/uac.js");
+ // js - plugins
 
 
-// js - plugins
+ // js - libs
 
-var _vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 
-var _vue2 = _interopRequireDefault(_vue);
 
-var _sweetScroll = __webpack_require__(/*! sweet-scroll */ "./node_modules/sweet-scroll/sweet-scroll.js");
-
-var _sweetScroll2 = _interopRequireDefault(_sweetScroll);
-
-var _utils = __webpack_require__(/*! ./libs/utils */ "./src/_js/libs/utils.js");
-
-var _uac = __webpack_require__(/*! ./libs/uac */ "./src/_js/libs/uac.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// js - libs
-var utils = new _utils.Utils();
-var uac = new _uac.Uac();
-
-// console.log('fugafuga');
+var utils = new _libs_utils__WEBPACK_IMPORTED_MODULE_2__["Utils"]();
+var uac = new _libs_uac__WEBPACK_IMPORTED_MODULE_3__["Uac"](); // console.log('fugafuga');
 
 /**
  * sample
  */
+
 console.log('utils.getWindowWidth: ' + utils.getWindowWidth());
 console.log('utils.mq("1279", "max"): ' + utils.mq('1279', 'max'));
 console.log('utils.mq("1280"): ' + utils.mq('1280'));
-
 console.log('browser name: ' + uac.browser());
 console.log('device name: ' + uac.device());
 console.log('if it\'s IE: ' + uac.isIE());
@@ -12421,18 +12413,17 @@ console.log('if it\'s a mobile device: ' + uac.isMobile());
 console.log('if it\'s a tablet device: ' + uac.isTablet());
 console.log('if it\'s a touch device: ' + uac.isTouch());
 console.log('if it\'s a modern browser: ' + uac.isModern());
-
 /**
  * add classes <html>
  */
 // uac.homeClass();
 
-
 /**
  * Vue Test
  */
+
 if (document.getElementById('app')) {
-  var vc = new _vue2.default({
+  var vc = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
     el: '#app',
     data: {
       count: 0
@@ -12446,7 +12437,7 @@ if (document.getElementById('app')) {
 }
 
 if (document.getElementById('vue-carousel')) {
-  var vs = new _vue2.default({
+  var vs = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
     el: '#vue-carousel',
     data: {
       contents: [{
@@ -12468,18 +12459,22 @@ if (document.getElementById('vue-carousel')) {
     methods: {
       back: function back() {
         this.transition_name = 'show-prev';
+
         if (this.visible_content <= 0) {
           this.visible_content = this.contents.length - 1;
           return false;
         }
+
         this.visible_content--;
       },
       next: function next() {
         this.transition_name = 'show-next';
+
         if (this.visible_content >= this.contents.length - 1) {
           this.visible_content = 0;
           return false;
         }
+
         this.visible_content++;
       },
       move: function move(index) {
@@ -12488,20 +12483,23 @@ if (document.getElementById('vue-carousel')) {
         } else {
           this.transition_name = 'show-next';
         }
+
         this.visible_content = index;
       }
     }
   });
 }
-
 /**
  * 画像ロールオーバー vanilla JS
  *
  * @param none
  *
  */
+
+
 function smartRollover() {
   var preLoadImg = {};
+
   if (document.getElementsByClassName) {
     var elm = document.getElementsByClassName('over');
 
@@ -12511,11 +12509,13 @@ function smartRollover() {
       var onSrc = elmSrc.substr(0, sep) + '_on' + elmSrc.substr(sep, 4);
       preLoadImg[elmSrc] = new Image();
       preLoadImg[elmSrc].src = onSrc;
+
       elm[i].onmouseover = function (e) {
         e.preventDefault();
         e.currentTarget.classList.add('is-hover');
         e.currentTarget.setAttribute('src', onSrc);
       };
+
       elm[i].onmouseout = function (e) {
         e.preventDefault();
         e.currentTarget.classList.remove('is-hover');
@@ -12526,26 +12526,30 @@ function smartRollover() {
     for (var i = 0; i < elm.length; i++) {
       _loop(i);
     } // for
-  } // if
-} // func
-window.addEventListener('load', smartRollover, false);
 
+  } // if
+
+} // func
+
+
+window.addEventListener('load', smartRollover, false);
 /**
  * sweet scroll ES6
  * @author http://webdesign-dackel.com/2015/12/17/sweet-scroll/
  * @param option
  * @param HTMLElement
  */
-document.addEventListener('DOMContentLoaded', function () {
-  var sweetScroll = new _sweetScroll2.default();
-}, false);
 
+document.addEventListener('DOMContentLoaded', function () {
+  var sweetScroll = new sweet_scroll__WEBPACK_IMPORTED_MODULE_1___default.a();
+}, false);
 /**
  * page top btn
  *
  * @param none
  *
  */
+
 if (document.querySelectorAll('[data-pagetop]')) {
   (function () {
     var btnPageTop = document.querySelectorAll('[data-pagetop]');
@@ -12554,6 +12558,7 @@ if (document.querySelectorAll('[data-pagetop]')) {
       window.onscroll = function () {
         var offset = window.pageYOffset,
             value = btnPageTop[i].getAttribute('data-pagetop');
+
         if (offset > value) {
           btnPageTop[i].classList.add('is-active');
         } else {
@@ -12565,6 +12570,7 @@ if (document.querySelectorAll('[data-pagetop]')) {
     for (var i = 0; i < btnPageTop.length; i++) {
       _loop2(i);
     } // for
+
   })();
 } // if
 
@@ -12574,16 +12580,19 @@ if (document.querySelectorAll('[data-pagetop]')) {
 /*!************************!*\
   !*** ./src/_js/app.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sass_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_sass/app */ "./src/_sass/app.scss");
+/* harmony import */ var _sass_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_index */ "./src/_js/_index.js");
+ // sass
 
-// sass
+ // js - pages
 
-__webpack_require__(/*! ../_sass/app */ "./src/_sass/app.scss");
 
-__webpack_require__(/*! ./_index */ "./src/_js/_index.js");
 
 /***/ }),
 
@@ -12591,19 +12600,17 @@ __webpack_require__(/*! ./_index */ "./src/_js/_index.js");
 /*!*****************************!*\
   !*** ./src/_js/libs/uac.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Uac */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Uac", function() { return Uac; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
  *
@@ -12621,8 +12628,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @method: homeClass()
  *
  */
-var Uac = exports.Uac = function () {
-
+var Uac =
+/*#__PURE__*/
+function () {
   /**
    * Constructor
    *
@@ -12635,17 +12643,17 @@ var Uac = exports.Uac = function () {
     _classCallCheck(this, Uac);
 
     this._uac = {}; // define _uac as a global object
+
     this.ua = window.navigator.userAgent.toLowerCase();
     this.ver = window.navigator.appVersion.toLowerCase();
   }
-
   /**
    * check browser version
    */
 
 
   _createClass(Uac, [{
-    key: 'browser',
+    key: "browser",
     value: function browser() {
       if (this.ua.indexOf('edge') !== -1) return 'edge'; // Edge
       else if (this.ua.indexOf("iemobile") !== -1) return 'iemobile'; // ieMobile
@@ -12662,23 +12670,21 @@ var Uac = exports.Uac = function () {
                 else if (this.ua.indexOf('firefox') !== -1) return 'firefox'; // FIrefox
                   else return 'unknown_browser';
     }
-
     /**
      * check device
      */
 
   }, {
-    key: 'device',
+    key: "device",
     value: function device() {
       if (this.ua.indexOf('iphone') !== -1 || this.ua.indexOf('ipod') !== -1) return 'iphone';else if (this.ua.indexOf('ipad') !== -1) return 'ipad';else if (this.ua.indexOf('android') !== -1) return 'android';else if (this.ua.indexOf('windows') !== -1 && this.ua.indexOf('phone') !== -1) return 'windows_phone';else return '';
     }
-
     /**
      * check ios version
      */
 
   }, {
-    key: 'iosVer',
+    key: "iosVer",
     value: function iosVer() {
       if (/iP(hone|od|ad)/.test(navigator.platform)) {
         var v = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
@@ -12686,80 +12692,72 @@ var Uac = exports.Uac = function () {
         return versions[0];
       } else return 0;
     }
-
     /**
      * boolean IE
      */
 
   }, {
-    key: 'isIE',
+    key: "isIE",
     value: function isIE() {
       return this.browser().substr(0, 2) === 'ie' && this.browser() !== 'iemobile';
     }
-
     /**
      * boolean iOS
      */
 
   }, {
-    key: 'isiOS',
+    key: "isiOS",
     value: function isiOS() {
       return this.device() === 'iphone' || this.device() === 'ipad';
     }
-
     /**
      * boolean Mobile
      */
 
   }, {
-    key: 'isMobile',
+    key: "isMobile",
     value: function isMobile() {
       return this.ua.indexOf('mobi') !== -1 || this.device() === 'iphone' || this.device() === 'windows_phone' && this.ua.indexOf('wpdesktop') === -1 || this.device() === 'iemobile';
     }
-
     /**
      * boolean Tablet
      */
 
   }, {
-    key: 'isTablet',
+    key: "isTablet",
     value: function isTablet() {
       return this.device() === 'ipad' || this.device() === 'android' && !this.isMobile();
     }
-
     /**
      * boolean Touch Device
      */
 
   }, {
-    key: 'isTouch',
+    key: "isTouch",
     value: function isTouch() {
       return 'ontouchstart' in window;
     }
-
     /**
      * boolean Modern Browser
      */
 
   }, {
-    key: 'isModern',
+    key: "isModern",
     value: function isModern() {
       return !(this.browser() === 'ie6' || this.browser() === 'ie7' || this.browser() === 'ie8' || this.browser() === 'ie9' || 0 < this.iosVer() && this.iosVer() < 8);
     }
-
     /**
      * Set the results as class names of the html
      */
 
   }, {
-    key: 'homeClass',
+    key: "homeClass",
     value: function homeClass() {
       var classStr = '';
-      classStr += this.browser() !== '' ? this.browser() + " " : 'browser-unknown ', classStr += this.device() !== '' ? this.device() + " " : 'device-unknown ', classStr += this.isMobile() ? 'mobile ' : 'desktop ', classStr += this.isTouch() ? 'touch ' : 'mouse ', classStr += this.isiOS() ? 'ios ' : '', classStr += this.isIE() ? 'ie ' : '', classStr += this.isModern() ? 'modern ' : 'old ';
-      // return classStr;
+      classStr += this.browser() !== '' ? this.browser() + " " : 'browser-unknown ', classStr += this.device() !== '' ? this.device() + " " : 'device-unknown ', classStr += this.isMobile() ? 'mobile ' : 'desktop ', classStr += this.isTouch() ? 'touch ' : 'mouse ', classStr += this.isiOS() ? 'ios ' : '', classStr += this.isIE() ? 'ie ' : '', classStr += this.isModern() ? 'modern ' : 'old '; // return classStr;
       // document.addEventListener('DOMContentLoaded', function() {
-      document.documentElement.className += classStr;
-      // });
+
+      document.documentElement.className += classStr; // });
     }
   }]);
 
@@ -12772,19 +12770,17 @@ var Uac = exports.Uac = function () {
 /*!*******************************!*\
   !*** ./src/_js/libs/utils.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Utils */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Utils", function() { return Utils; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
  *
@@ -12795,12 +12791,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @method: smoothScroll()
  *
  */
-var Utils = exports.Utils = function () {
+var Utils =
+/*#__PURE__*/
+function () {
   function Utils() {
     _classCallCheck(this, Utils);
-  }
-  // console.log('Load Utils.');
-
+  } // console.log('Load Utils.');
 
   /**
    * タッチデバイス判定
@@ -12812,12 +12808,14 @@ var Utils = exports.Utils = function () {
 
 
   _createClass(Utils, [{
-    key: 'isTouchDevice',
+    key: "isTouchDevice",
     value: function isTouchDevice() {
       var result = false;
+
       if (window.ontouchstart === null) {
         result = true;
       }
+
       return result;
     } // isTouchDevice
 
@@ -12830,7 +12828,7 @@ var Utils = exports.Utils = function () {
      */
 
   }, {
-    key: 'getWindowWidth',
+    key: "getWindowWidth",
     value: function getWindowWidth() {
       var ww = window.innerWidth;
       return ww;
@@ -12846,10 +12844,9 @@ var Utils = exports.Utils = function () {
      */
 
   }, {
-    key: 'mq',
+    key: "mq",
     value: function mq(size) {
       var rule = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'min';
-
       return window.matchMedia('(' + rule + '-width: ' + size + 'px)').matches;
     } // mq
 

@@ -14,7 +14,7 @@
  * @method: homeClass()
  *
  */
- export class Uac {
+export class Uac {
 
   /**
    * Constructor
