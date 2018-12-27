@@ -24,9 +24,6 @@ $use_css_utility: true;
 // style config
 // ================================== //
 
-// columns
-$columns: 12;
-
 // Media Query
 $mq-breakpoints: (
   'sp'   : 700px,
@@ -40,11 +37,18 @@ $site_width: 1200px;
 $ct_gutter: 1rem;
 $ct_gutter_half: $ct_gutter / 2;
 
+// header height
+$header_height_sp: 60px;
+$header_height_pc: 80px;
+
 // element margin
 $base_mg: $ct_gutter;
 
 // element padding
 $base_pd: $ct_gutter;
+
+// columns
+$columns: 12;
 
 
 // Font

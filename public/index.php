@@ -9,7 +9,7 @@
   include_once(__DIR__ . "/assets/include/site_config.php");
   include_once(__DIR__ . "/assets/include/_html_header.php");
 ?>
-<body class="<?php echo $body_class; ?>">
+<body class="l-body <?php echo $body_class; ?>">
 <?php
   include_once(__DIR__ . "/assets/include/_start_of_body.php");
   include_once(__DIR__ . "/assets/include/_header.php");

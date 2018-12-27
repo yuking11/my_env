@@ -146,7 +146,9 @@ window.addEventListener('load', smartRollover, false);
  * @param HTMLElement
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const sweetScroll = new SweetScroll();
+  const sweetScroll = new SweetScroll({
+    header: '[data-scroll-header]'
+  });
 }, false);
 
 

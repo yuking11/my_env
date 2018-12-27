@@ -4,6 +4,25 @@
 //
 // =====================================================
 
+// body
+// ================================== //
+.l-body {
+
+  padding-top: $header_height_sp;
+
+  @include mq(sp, max, true) {
+  }// @include mq(sp, max, true)
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+
+    padding-top: $header_height_pc;
+
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .l-body
+
 // container
 // ================================== //
 .l-container {

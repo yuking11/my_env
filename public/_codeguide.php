@@ -10,19 +10,22 @@
 	include_once(__DIR__ . "/assets/include/site_config.php");
 	include_once(__DIR__ . "/assets/include/_html_header.php");
 ?>
-<body class="<?php echo $body_class; ?>">
+<body class="l-body <?php echo $body_class; ?>">
 <?php
-	include_once(__DIR__ . "/assets/include/_start_of_body.php");
+  include_once(__DIR__ . "/assets/include/_start_of_body.php");
+  include_once(__DIR__ . "/assets/include/_header.php");
+	include_once(__DIR__ . "/assets/include/_nav.php");
 ?>
 
-<header id="l-header" class="l-header l-header-fixed" data-scroll-header>
 
-  <h1>Code Guide</h1>
-  <p>PHP version： <?php echo phpversion(); ?></p>
+<section class="l-content-wide">
+  <div class="l-inner">
+    <h2>Code Guide</h2>
+    <p>PHP version： <?php echo phpversion(); ?></p>
+  </div>
+</section>
 
-</header>
-
-<section class="l-content-wide" style="margin-top: 130px;">
+<section class="l-content-wide">
   <div class="l-inner">
     <h2 class="u-mb10">スムーズスクロールテスト</h2>
     <p>

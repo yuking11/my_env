@@ -12541,7 +12541,9 @@ window.addEventListener('load', smartRollover, false);
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  var sweetScroll = new sweet_scroll__WEBPACK_IMPORTED_MODULE_1___default.a();
+  var sweetScroll = new sweet_scroll__WEBPACK_IMPORTED_MODULE_1___default.a({
+    header: '[data-scroll-header]'
+  });
 }, false);
 /**
  * page top btn
