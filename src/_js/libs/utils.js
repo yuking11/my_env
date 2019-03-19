@@ -7,7 +7,7 @@
  * @method: smoothScroll()
  *
  */
- export class Utils {
+export class Utils {
 
   constructor() {
     // console.log('Load Utils.');

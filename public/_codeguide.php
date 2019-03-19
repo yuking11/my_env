@@ -1,4 +1,3 @@
-
 <?php
   $slug = 'codeguide';// includeなどの条件分岐用
 	//$slug_child = 'slug_child';// includeなどの条件分岐用
