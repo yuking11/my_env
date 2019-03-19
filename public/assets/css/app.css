@@ -506,6 +506,7 @@ code {
 #gnav-ctrl {
   display: none; }
   #gnav-ctrl:checked ~ .gnav-btn {
+    background-color: #FFF;
     border-color: #252627; }
     #gnav-ctrl:checked ~ .gnav-btn::before {
       border-top-color: #252627;
@@ -540,10 +541,13 @@ code {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: transparent;
   width: 30px;
   height: 30px;
   border: 1px solid #FFF;
-  border-radius: 4px; }
+  border-radius: 4px;
+  -webkit-transition: all .35s;
+  transition: all .35s; }
   .gnav-btn::before, .gnav-btn::after {
     content: "";
     position: absolute;
@@ -567,9 +571,6 @@ code {
   @media print, screen and (min-width: 700px) {
     .gnav-btn {
       top: 24px; } }
-  @media print, screen and (min-width: 960px) {
-    .gnav-btn {
-      display: none; } }
 
 .gnav-overlay {
   position: absolute;
@@ -672,6 +673,7 @@ code {
       font-size: 1rem; } }
   @media print, screen and (min-width: 960px) {
     .gnav {
+      width: 45vw;
       padding-top: 80px; }
       .gnav .gnav_list .gnav-sub_btn {
         position: absolute;
